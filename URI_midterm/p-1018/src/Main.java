@@ -23,6 +23,6 @@ public class Main {
         n%=5;
         System.out.printf("%d nota(s) de R$ 2,00\n", n/2);
         n%=2;
-        System.out.printf("%d nota(s) de R$ 1,00", n);
+        System.out.printf("%d nota(s) de R$ 1,00\n", n);
     }
 }
