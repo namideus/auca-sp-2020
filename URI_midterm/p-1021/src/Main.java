@@ -25,7 +25,7 @@ public class Main {
         n%=5;
         System.out.printf("%d nota(s) de R$ 2.00\n", (int)(n/2));
         n%=2;
-
+        //
         System.out.print("MOEDAS:\n");
         System.out.printf("%d moeda(s) de R$ 1.00\n", (int)(n));
         n%=1.00;
