@@ -8,7 +8,13 @@ import java.util.Scanner;
 public class Main {
     // Main
     public static void main(String[] args) {
-       for(int i=2; i<=100; i+=2)
-           System.out.println(i);
+        Scanner scan = new Scanner(System.in);
+        int c = 0;
+        for(int i=0; i<6; i++)
+        {
+            double d = scan.nextDouble();
+            if (d>0) ++c;
+        }
+        System.out.println(c+" valores positivos");
     }
 }
