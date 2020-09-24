@@ -28,7 +28,7 @@ public class Main {
 
             if(dig>0)
                 System.out.print("POSITIVE\n");
-            else if(dig<0)
+            else
                 System.out.print("NEGATIVE\n");
         }
     }

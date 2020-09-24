@@ -21,9 +21,9 @@ public class Problem10 {
 
         for(int period = 0; period < n; period++) {
             for (int year = 0; year < 5; year++) {
-                totalPopulation += yearSeconds / 7.0;  // One birth every 7 seconds
-                totalPopulation -= yearSeconds / 13.0; // One death every 13 seconds
-                totalPopulation += yearSeconds / 45.0; // One new immigrant every 45 seconds
+                totalPopulation += yearSeconds / 7;  // One birth every 7 seconds
+                totalPopulation -= yearSeconds / 13; // One death every 13 seconds
+                totalPopulation += yearSeconds / 45; // One new immigrant every 45 seconds
             }
         }
 
