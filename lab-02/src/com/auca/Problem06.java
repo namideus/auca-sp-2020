@@ -7,13 +7,13 @@ import java.util.Scanner;
  *
  * */
 
-public class Problem05 {
+public class Problem06 {
     // Main
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.print("Temperature in degrees Fahrenheit? ");
-        int fahrenheit = scan.nextInt();
-        double celsius = (fahrenheit-32)*(5/9.0);
-        System.out.printf("The temperature in degrees Celsius is %.2f\n", celsius);
+        System.out.print("Enter a degree in Celsius: ");
+        int celsius = scan.nextInt();
+        double fahrenheit = (9*celsius)/5.0+32;
+        System.out.printf("%d Celsius is %.1f Fahrenheit\n", celsius, fahrenheit);
     }
 }
