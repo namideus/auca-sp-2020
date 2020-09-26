@@ -25,9 +25,9 @@ public class Main {
         n%=5;
         System.out.printf("%d nota(s) de R$ 2.00\n", (int)(n/2));
         n%=2;
-        //
+
         System.out.print("MOEDAS:\n");
-        System.out.printf("%d moeda(s) de R$ 1.00\n", (int)(n));
+        System.out.printf("%d moeda(s) de R$ 1.00\n", (int)(n/1.00));
         n%=1.00;
         System.out.printf("%d moeda(s) de R$ 0.50\n", (int)(n/0.5));
         n%=0.50;
@@ -37,6 +37,6 @@ public class Main {
         n%=0.10;
         System.out.printf("%d moeda(s) de R$ 0.05\n", (int)(n/0.05));
         n%=0.05;
-        System.out.printf("%d moeda(s) de R$ 0.01\n", (int)(n/0.01));
+        System.out.printf("%d moeda(s) de R$ 0.01", (int)(n/0.01));
     }
 }
