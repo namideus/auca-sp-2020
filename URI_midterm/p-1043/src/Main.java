@@ -1,7 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -13,16 +9,21 @@ public class Main {
     // Main
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int a[] = new int[3];
-        int b[] = new int[3];
-        for(int i=0; i<3;i++) {
-            a[i] = s.nextInt();
-            b[i]=a[i];
+        float a,b,c;
+        a = s.nextFloat();
+        b = s.nextFloat();
+        c = s.nextFloat();
+        float result = 0;
+        String msg;
+        if(a+b>c && a+c>b && b+c>a)
+        {
+            result = a+b+c;
+            msg = "Perimetro = ";
+        } else {
+            result = (c*a+c*b)/2;
+            msg = "Area = ";
         }
-        Arrays.sort(a);
-        System.out.printf("%d\n%d\n%d\n", a[0],a[1],a[2]);
-        System.out.println();
-        System.out.printf("%d\n%d\n%d\n", b[0],b[1],b[2]);
+        System.out.printf(msg+"%.1f\n", result);
     }
 
 }
