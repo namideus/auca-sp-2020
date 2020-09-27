@@ -12,7 +12,7 @@ public class Main {
         float n = scan.nextFloat();
         if (n<0 || n>100)
         {
-           System.out.println("Fora de intervalo");
+            System.out.println("Fora de intervalo");
         } else
         {
             if(n>25 && n<=50) System.out.println("Intervalo (25,50]");
@@ -21,3 +21,8 @@ public class Main {
         }
     }
 }
+
+
+
+
+
