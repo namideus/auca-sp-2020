@@ -17,8 +17,8 @@ public class Main {
         delta = (b * b) - (4 * a * c);
 
         if( a!=0 && delta>=0) {
-            x1 = (-b + Math.sqrt(delta))/2*a;
-            x2 = (-b - Math.sqrt(delta))/2*a;
+            x1 = (-b + Math.sqrt(delta))/(2*a);
+            x2 = (-b - Math.sqrt(delta))/(2*a);
             System.out.printf("R1 = %.5f\n", x1);
             System.out.printf("R2 = %.5f\n", x2);
         } else {
