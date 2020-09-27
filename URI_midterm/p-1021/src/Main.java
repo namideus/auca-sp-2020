@@ -37,6 +37,6 @@ public class Main {
         n%=0.10;
         System.out.printf("%d moeda(s) de R$ 0.05\n", (int)(n/0.05));
         n%=0.05;
-        System.out.printf("%d moeda(s) de R$ 0.01", (int)(n/0.01));
+        System.out.printf("%d moeda(s) de R$ 0.01\n", (int)(n/0.01));
     }
 }
