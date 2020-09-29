@@ -35,8 +35,10 @@ public class Main {
             case 27:
                 System.out.println("Vitoria");
                 break;
-            default:
+            case 31:
                 System.out.println("Belo Horizonte");
+            default:
+                System.out.println("DDD nao cadastrado");
         }
     }
 }
