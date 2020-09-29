@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -9,13 +11,30 @@ public class Main {
     // Main
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int a,b;
-        a = s.nextInt();
-        b = s.nextInt();
+        double a,b,c;
 
-        if(b%a==0 || a%b==0)
-            System.out.println("Sao Multiplos");
-        else
-            System.out.println("Nao sao Multiplos");
+        double[] arr = new double[3];
+
+        for(int i=0;i<3;i++)
+            arr[i] = s.nextDouble();
+
+        Arrays.sort(arr);
+
+        a = arr[2];
+        b = arr[1];
+        c = arr[0];
+
+        if(a>=b+c) System.out.println("NAO FORMA TRIANGULO");
+        else {
+            if (a * a == b * b + c * c) System.out.println("TRIANGULO RETANGULO");
+
+            if (a * a > b * b + c * c) System.out.println("TRIANGULO OBTUSANGULO");
+
+            if (a * a < b * b + c * c) System.out.println("TRIANGULO ACUTANGULO");
+
+            if (a == b && b == c) System.out.println("TRIANGULO EQUILATERO");
+
+            if (a == b && b != c || b == c && b != a) System.out.println("TRIANGULO ISOSCELES");
+        }
     }
 }
