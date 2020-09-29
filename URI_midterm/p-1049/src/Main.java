@@ -59,7 +59,7 @@ public class Main {
                                 break;
                         }
                         break;
-                    case "anelido":
+                    case "anelideo":
                         switch(s3)
                         {
                             case "hematofago":
