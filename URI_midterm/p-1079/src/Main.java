@@ -12,8 +12,8 @@ public class Main {
 
         double a,b,c;
         int n = s.nextInt();
-
-        for(int t=0;t<n;t++)
+        int max = -1;
+        for(int t=0;t<100;t++)
         {
             a = s.nextDouble();
             b = s.nextDouble();
