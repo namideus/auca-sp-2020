@@ -10,9 +10,9 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner s = new Scanner(System.in);
-        double a = s.nextFloat();
-        double b = s.nextFloat();
-        double c = s.nextFloat();
+        double a = s.nextDouble();
+        double b = s.nextDouble();
+        double c = s.nextDouble();
         double x1, x2, delta;
         delta = (b * b) - (4 * a * c);
 
