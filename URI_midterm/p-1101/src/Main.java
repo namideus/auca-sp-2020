@@ -18,7 +18,7 @@ public class Main {
         while(m>0 && n>0)
         {
             sum = 0;
-            for(int i=n;i<=m;i++) {
+            for(int i=Math.min(n,m);i<=Math.max(n,m);i++) {
                 System.out.printf("%d ", i);
                 sum+=i;
             }
