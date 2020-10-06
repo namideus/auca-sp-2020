@@ -17,8 +17,6 @@ public class Main {
 
         while(m!=n)
         {
-            sum = 0;
-
             if(m<n) System.out.println("Crescente");
 
             if(m>n) System.out.println("Decrescente");
