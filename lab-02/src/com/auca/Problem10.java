@@ -22,7 +22,8 @@ public class Problem10 {
 
         long yearSeconds = yearDays * 24 * 60 * 60; // Total seconds in one year
 
-        for (int year = 0; year < n; year++) {
+        for (int year = 0; year < n; year++)
+        {
             totalPopulation += yearSeconds / 7;  // One birth every 7 seconds
             totalPopulation -= yearSeconds / 13; // One death every 13 seconds
             totalPopulation += yearSeconds / 45; // One new immigrant every 45 seconds

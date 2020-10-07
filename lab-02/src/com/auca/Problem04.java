@@ -12,7 +12,7 @@ public class Problem04 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 	    System.out.print("Length in inches? ");
-	    int inch = scan.nextInt();
-        System.out.printf("%d in. = %.2f cm.\n", inch, inch*2.54);
+	    double inch = scan.nextDouble();
+        System.out.printf("%g in. = %.2f cm.\n", inch, inch*2.54);
     }
 }
