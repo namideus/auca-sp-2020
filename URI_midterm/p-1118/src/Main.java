@@ -26,6 +26,7 @@ public class Main {
                     if (p >= 0 && p <= 10) {
                         cnt++;
                         points += p;
+                        //
                     } else
                         System.out.println("nota invalida");
                     if (cnt == 2) break;
