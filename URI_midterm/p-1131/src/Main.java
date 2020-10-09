@@ -43,6 +43,6 @@ public class Main {
         else if(inter<gremio)
             System.out.print("Gremio venceu mais\n");
         else
-            System.out.print("Não houve vencedor\n");
+            System.out.print("Nao houve vencedor\n");
     }
 }
