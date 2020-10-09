@@ -16,21 +16,17 @@ public class Main {
         {
             x = sc.nextInt();
 
-            if(x==1)
-                alc++;
+            if(x==1) alc++;
 
-            if(x==2)
-                gas++;
+            if(x==2) gas++;
 
-            if(x==3)
-                dies++;
+            if(x==3) dies++;
 
-            if(x==4)
-                break;
+            if(x==4) break;
         }
-        System.out.println("MUITO OBRIGADO");
+        System.out.print("MUITO OBRIGADO\n");
         System.out.printf("Alcool: %d\n", alc);
         System.out.printf("Gasolina: %d\n", gas);
-        System.out.printf("Diesel:%d\n", dies);
+        System.out.printf("Diesel: %d\n", dies);
     }
 }
