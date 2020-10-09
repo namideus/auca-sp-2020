@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/URI_midterm.iml" filepath="$PROJECT_DIR$/URI_midterm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/defence-1042/defence-1042.iml" filepath="$PROJECT_DIR$/defence-1042/defence-1042.iml" />
       <module fileurl="file://$PROJECT_DIR$/p-1001/p-1001.iml" filepath="$PROJECT_DIR$/p-1001/p-1001.iml" />
       <module fileurl="file://$PROJECT_DIR$/p-1002/p-1002.iml" filepath="$PROJECT_DIR$/p-1002/p-1002.iml" />
       <module fileurl="file://$PROJECT_DIR$/p-1003/p-1003.iml" filepath="$PROJECT_DIR$/p-1003/p-1003.iml" />
@@ -66,6 +67,8 @@
       <module fileurl="file://$PROJECT_DIR$/p-1116/p-1116.iml" filepath="$PROJECT_DIR$/p-1116/p-1116.iml" />
       <module fileurl="file://$PROJECT_DIR$/p-1117/p-1117.iml" filepath="$PROJECT_DIR$/p-1117/p-1117.iml" />
       <module fileurl="file://$PROJECT_DIR$/p-1118/p-1118.iml" filepath="$PROJECT_DIR$/p-1118/p-1118.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p-1131/p-1131.iml" filepath="$PROJECT_DIR$/p-1131/p-1131.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p-1132/p-1132.iml" filepath="$PROJECT_DIR$/p-1132/p-1132.iml" />
     </modules>
   </component>
 </project>

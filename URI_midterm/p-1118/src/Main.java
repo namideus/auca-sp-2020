@@ -21,24 +21,28 @@ public class Main {
 
             if(x==1)
             {
-                p = sc.nextDouble();
-                while (true) {
-                    if (p >= 0 && p <= 10) {
+                while (true)
+                {
+                    p = sc.nextDouble();
+
+                    if (p >= 0 && p <= 10)
+                    {
                         cnt++;
                         points += p;
-                        //
                     } else
-                        System.out.println("nota invalida");
-                    if (cnt == 2) break;
-                    p = sc.nextDouble();
+                        System.out.print("nota invalida\n");
+
+                    if (cnt == 2)
+                        break;
                 }
                 System.out.printf("media = %.2f\n", points / 2);
-            } else if(x==2) {
-                break;
-            } else {
-                System.out.println("novo calculo (1-sim 2-nao)");
             }
+
+            System.out.print("novo calculo (1-sim 2-nao)\n");
             x = sc.nextInt();
+
+            if(x==2)
+                break;
         }
     }
 }
