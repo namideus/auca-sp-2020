@@ -13,13 +13,12 @@ public class Main {
         n = sc.nextInt();
 
         int sum, t1=0, t2=1;
-        for(int i=0;i<n;i++)
+        for(int i=1;i<=n;i++)
         {
-            System.out.printf("%d ",t1);
+            System.out.print(t1+((i<n) ? " " : "\n"));
             sum = t1 + t2;
             t1 = t2;
             t2 = sum;
         }
-        System.out.println();
     }
 }
