@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -16,7 +15,7 @@ public class Main {
 
         sum = x;
 
-        while(z<x)
+        while(z<=x)
         {
             z = sc.nextInt();
         }
