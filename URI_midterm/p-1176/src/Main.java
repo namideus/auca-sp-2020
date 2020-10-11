@@ -9,17 +9,17 @@ public class Main {
     // Main
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int n, t = s.nextInt();
+        long n, t = s.nextLong();
         // int[]x = new int[10];
         for(int i=0; i<t; i++)
         {
-            n = s.nextInt();
+            n = s.nextLong();
             System.out.printf("Fib(%d) = %d\n", n, fib(n));
         }
     }
 
     // Recursive factorial
-    public static int fib(int n)
+    public static long fib(long n)
     {
         if(n==0)
             return 0;
