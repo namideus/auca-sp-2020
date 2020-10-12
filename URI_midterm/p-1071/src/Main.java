@@ -14,12 +14,11 @@ public class Main {
         x = sc.nextInt();
         y = sc.nextInt();
 
-        if(x<0) x=-x;
-        if(y<0) y=-y;
-
         for(int i=Math.min(x,y)+1; i<Math.max(x,y); i++)
-            if(i%2>0)
-                sum+=i;
+        {
+            if (i % 2 ==1 || i%2==-1)
+                sum += i;
+        }
 
         System.out.println(sum);
     }
