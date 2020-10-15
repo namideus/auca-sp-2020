@@ -15,7 +15,6 @@ public class Main {
         while(n>0)
         {
             sum=0;
-
             a = sc.nextInt();
             b = sc.nextInt();
             if(a>b) {
