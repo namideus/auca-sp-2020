@@ -21,6 +21,8 @@ public class Problem05 {
             System.out.println("Grade: C");
         else if(grade>=60 && grade<70)
             System.out.println("Grade: D");
+        else if(grade>=0 && grade<60)
+            System.out.println("Grade: F");
         else
             System.out.printf("%d is not in the permitted range.\n", grade);
     }
