@@ -12,12 +12,8 @@ public class Problem05 {
 
         System.out.print("Month? ");
         int month = s.nextInt();
-        int days;
 
-        if(month==2 && isLeapYear(year))
-            days = monthDays[month-1]+1;
-        else
-            days = monthDays[month-1];
+        int days = (month==2 && isLeapYear(year)) ? monthDays[month-1]+1 : monthDays[month-1];
 
         System.out.println("Number of days: "+days);
     }
