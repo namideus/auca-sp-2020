@@ -10,8 +10,20 @@ public class Problem05 {
         System.out.print("Year? ");
         int year = s.nextInt();
 
+        if(year<1)
+        {
+            System.out.println(year + " is not a correct year!");
+            System.exit(2);
+        }
+
         System.out.print("Month? ");
         int month = s.nextInt();
+
+        if(month<1 || month>12)
+        {
+            System.out.println(month + " is not a correct month!");
+            System.exit(2);
+        }
 
         int days = (month==2 && isLeapYear(year)) ? monthDays[month-1]+1 : monthDays[month-1];
 
