@@ -26,8 +26,13 @@ public class Problem03 {
             case 8:
                 System.out.println("summer");
                 break;
-                default:
-                    System.out.println("autumn");
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("autumn");
+                break;
+            default:
+                System.out.println(month + " is not correct number of month");
         }
     }
 }

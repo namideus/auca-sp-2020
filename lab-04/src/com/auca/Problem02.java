@@ -16,5 +16,7 @@ public class Problem02 {
             System.out.println("summer");
         else if(month>=9 && month<=11)
             System.out.println("autumn");
+        else
+            System.out.println(month + " is not correct number of month");
     }
 }
