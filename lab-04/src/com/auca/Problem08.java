@@ -26,10 +26,10 @@ public class Problem08 {
         if(10<weight && weight <= 20)
             cost = 10.5;
         if(20<weight && weight<=33)
-            cost = 12.5;
+            cost = 13.5;
         if(33<weight && weight<=50)
-            cost = 14.5;
+            cost = 15.5;
 
-        System.out.printf("Cost of shipping: %.1f\n", cost);
+        System.out.printf("Cost of shipping: $%.1f\n", cost);
     }
 }
