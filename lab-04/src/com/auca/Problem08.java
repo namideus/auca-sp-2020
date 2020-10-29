@@ -1,8 +1,5 @@
 package com.auca;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Problem08 {
@@ -12,7 +9,13 @@ public class Problem08 {
 
         System.out.print("Enter the weight of the package: ");
         double weight = sc.nextDouble();
-        double cost;
+        double cost = 0;
+
+        if(weight>50)
+        {
+            System.out.println("The package cannot be shipped.");
+            System.exit(2);
+        }
 
         if(0<weight && weight <= 1)
             cost = 3.5;
@@ -22,6 +25,11 @@ public class Problem08 {
             cost = 8.5;
         if(10<weight && weight <= 20)
             cost = 10.5;
+        if(20<weight && weight<=33)
+            cost = 12.5;
+        if(33<weight && weight<=50)
+            cost = 14.5;
 
+        System.out.printf("Cost of shipping: %.1f\n", cost);
     }
 }
