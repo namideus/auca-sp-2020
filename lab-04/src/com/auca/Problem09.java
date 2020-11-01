@@ -6,6 +6,7 @@ public class Problem09 {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
+
         double a,b,c, p = 0;
         System.out.print("Enter 1st edge: ");
         a = s.nextDouble();

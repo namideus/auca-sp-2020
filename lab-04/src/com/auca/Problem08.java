@@ -17,17 +17,23 @@ public class Problem08 {
             System.exit(2);
         }
 
+        if(weight<0)
+        {
+            System.out.println("Invalid weight.");
+            System.exit(2);
+        }
+
         if(0<weight && weight <= 1)
             cost = 3.5;
-        if(1<weight && weight <= 3)
+        else if(weight <= 3)
             cost = 5.5;
-        if(3<weight && weight <= 10)
+        else if(weight <= 10)
             cost = 8.5;
-        if(10<weight && weight <= 20)
+        else if(weight <= 20)
             cost = 10.5;
-        if(20<weight && weight<=33)
+        else if(weight<=33)
             cost = 13.5;
-        if(33<weight && weight<=50)
+        else if(weight<=50)
             cost = 15.5;
 
         System.out.printf("Cost of shipping: $%.1f\n", cost);
