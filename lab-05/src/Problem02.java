@@ -1,5 +1,3 @@
-package com.auca;
-
 import java.util.Scanner;
 
 public class Problem02 {
