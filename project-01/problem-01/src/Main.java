@@ -13,7 +13,7 @@ public class Main extends PApplet {
 
     public void setup() {
         x = width/2f;
-        y = height-1;
+        y = height-MAX_R/2f;
     }
 
     public void draw() {
@@ -25,7 +25,7 @@ public class Main extends PApplet {
 //        if(x<width-(MAX_R/2f+10f))
 //            x+=10; // Horizontal
 
-        if(y>0+MAX_R/2f)
+        if(y>MAX_R/2f+2f)
             y-=10; // Vertical
     }
 
