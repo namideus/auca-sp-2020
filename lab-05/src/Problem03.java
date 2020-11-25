@@ -7,17 +7,17 @@ public class Problem03 {
     {
         Scanner scan = new Scanner(System.in);
         System.out.print("Number of tests: ");
-        int a, b, c, cor = 0, incor = 0, n, tests = scan.nextInt();
+        int a, b, c, cor = 0, tests = scan.nextInt();
 
         Random random=new Random();
 
         for(int i = 0; i< tests; i++)
         {
             a = (random.nextInt(101)-50);
-            b = (random.nextInt(101)-50);;
-            c = (random.nextInt(101)-50);;
+            b = (random.nextInt(101)-50);
+            c = (random.nextInt(101)-50);
 
-            System.out.printf("%d + %d = %d\n", a, b, c);
+            System.out.printf("%d %s = %d\n", a, (b>=0)? "+ "+b : "- "+(-b), c);
 
             cor+=(a+b==c)?1:0;
         }
