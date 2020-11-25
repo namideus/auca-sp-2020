@@ -2,8 +2,7 @@ import processing.core.*;
 
 public class Problem05 extends PApplet {
 
-    private final int N = 100;
-    private float alpha = 0;
+    private final int N = 20;
 
     public void settings() {
         fullScreen();
@@ -11,16 +10,19 @@ public class Problem05 extends PApplet {
 
     public void setup() {
         noLoop();
-        alpha = 90;
+        noStroke();
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        for(int rad=0; rad<=900; rad+=50, alpha-=5)
+        float dc = 250f / N;
+        float dr = (float)min(height, width) / N;
+
+        for(int i=0; i<N; ++i)
         {
-            fill(255f,50f,70f, alpha);
-            ellipse(width/2f, height/2f, rad, rad);
+            fill(5 + i*dc,0f,0f);
+            circle(width/2.0f, height/2.0f, 1000-i*dr);
         }
     }
 
