@@ -3,7 +3,7 @@ import processing.core.*;
 public class Problem04 extends PApplet {
 
     private final int N = 100;
-    private final int MAX_R = 100;
+    private final int MAX_R = 50;
 
     public void settings() {
         fullScreen();
