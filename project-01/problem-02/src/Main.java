@@ -2,25 +2,49 @@ import processing.core.*;
 
 public class Main extends PApplet {
 
-    private final int N = 100;
-    private final int MAX_R = 50;
-    private float x;
-    private float y;
+    private boolean f = true;
+    private float size1, size2;
 
     public void settings() {
         fullScreen();
     }
 
     public void setup() {
-        noLoop();
+        frameRate(20f);
+
+        size1 = 100f;
+        size2 = 20f;
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        fill(255,0,0);
-        textSize(100f);
-        text("Java", width/2f, height/2f);
+        if(f) {
+            size1-=5;
+            size2+=5;
+
+            if(size1==20)
+                f = false;
+        } else {
+            size1+=5;
+            size2-=5;
+
+            if(size1==100)
+                f = true;
+        }
+
+        fill(255, 0, 0);
+       // textSize(size1);
+        textAlign(width/2, height/2);
+        text("Hello,", width / 2.2f, height / 2.5f);
+
+        fill(0, 255, 0);
+        textSize(size2);
+        text("Wonderful", width / 2.5f, height / 1.9f);
+
+        fill(255, 255, 0);
+        textSize(size1);
+        text("World of Java", width / 2.8f, height / 1.5f);
     }
 
     public static void main(String[] args) {
