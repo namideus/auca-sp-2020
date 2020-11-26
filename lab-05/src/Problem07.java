@@ -20,12 +20,13 @@ public class Problem07 {
        {
             ++number;
 
-            if(number==10 || number==11)
+            if(number==20)
                 continue;
 
             sum+=number;
        }
 
-        System.out.printf("The sum is %d\n",sum);
+        System.out.printf("The number is %d\nThe sum is %d\n",number,sum);
+        //System.out.printf("The sum is %d\n",sum);
     }
 }
