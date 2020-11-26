@@ -18,6 +18,9 @@ public class Main extends PApplet {
     public void draw() {
         background(0, 0, 0);
 
+        fill(255,0,0);
+        textSize(100f);
+        text("Java", width/2f, height/2f);
     }
 
     public static void main(String[] args) {
