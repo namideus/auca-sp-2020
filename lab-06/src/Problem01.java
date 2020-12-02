@@ -4,14 +4,14 @@ public class Problem01 {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        double p1,p2,p3,d1,d2;
+        int p1,p2,p3,d1,d2;
 
         System.out.print("Your coordinate: ");
-        p1 = scan.nextDouble();
+        p1 = scan.nextInt();
         System.out.print("Coordinate of 1st point: ");
-        p2 = scan.nextDouble();
+        p2 = scan.nextInt();
         System.out.print("Coordinate of 2nd point: ");
-        p3 = scan.nextDouble();
+        p3 = scan.nextInt();
 
         d1 = Math.abs(p1-p2);
         d2 = Math.abs(p1-p3);
