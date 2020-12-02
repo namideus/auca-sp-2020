@@ -13,8 +13,8 @@ public class Problem01 {
         System.out.print("Coordinate of 2nd point: ");
         p3 = scan.nextInt();
 
-        d1 = Math.abs(p1-p2);
-        d2 = Math.abs(p1-p3);
+        d1 = abs(p1-p2);
+        d2 = abs(p1-p3);
 
         if(d1<d2)
             System.out.println("1st point is closer. Distance "+d1);
@@ -22,5 +22,10 @@ public class Problem01 {
             System.out.println("2nd point is closer. Distance "+d2);
         else
             System.out.println("Both points are equally close. Distance "+d2);
+    }
+
+    public static int abs(int n)
+    {
+        return (n<0) ? -n : n;
     }
 }
