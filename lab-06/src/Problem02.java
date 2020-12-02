@@ -35,4 +35,9 @@ public class Problem02 {
     {
         return year%4==0 && year%100>0 || year%400==0;
     }
+
+    private static int getNumberOfDays()
+    {
+        return 0;
+    }
 }

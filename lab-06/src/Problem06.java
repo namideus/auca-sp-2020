@@ -10,7 +10,7 @@ public class Problem06 {
 
         if (n == 0)
         {
-            System.out.println("Number must be greater than zero! Exitting.");
+            System.out.println("Number must be greater than zero! Exiting.");
             System.exit(2);
         }
 
