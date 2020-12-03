@@ -35,16 +35,16 @@ public class Main extends PApplet {
 
         fill(255, 0, 0);
        // textSize(size1);
-        textAlign(width/2, height/2);
-        text("Hello,", width / 2.2f, height / 2.5f);
+        textAlign(CENTER);
+        text("Hello,", width / 2f, height / 2.5f);
 
         fill(0, 255, 0);
         textSize(size2);
-        text("Wonderful", width / 2.5f, height / 1.9f);
+        text("Wonderful", width / 2f, height / 1.9f);
 
         fill(255, 255, 0);
         textSize(size1);
-        text("World of Java", width / 2.8f, height / 1.5f);
+        text("World of Java!", width / 2f, height / 1.5f);
     }
 
     public static void main(String[] args) {
