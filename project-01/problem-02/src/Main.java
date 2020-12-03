@@ -4,6 +4,7 @@ public class Main extends PApplet {
 
     private boolean f = true;
     private float size1, size2;
+    private final float SIZE = 5f;
 
     public void settings() {
         fullScreen();
@@ -20,15 +21,13 @@ public class Main extends PApplet {
         background(0, 0, 0);
 
         if(f) {
-            size1-=5;
-            size2+=5;
-
+            size1-=SIZE;
+            size2+=SIZE;
             if(size1==20)
                 f = false;
         } else {
-            size1+=5;
-            size2-=5;
-
+            size1+=SIZE;
+            size2-=SIZE;
             if(size1==100)
                 f = true;
         }
