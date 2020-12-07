@@ -11,8 +11,8 @@ public class Main extends PApplet {
     private float D = 50;
 
     public void settings() {
-        fullScreen();
-        // size(1000,1000);
+        //fullScreen();
+        size(1000,1000);
 
     }
 
@@ -26,8 +26,8 @@ public class Main extends PApplet {
         y = height/2f;
         dx = D;
         dy = 0;
-        columns = width/D;
-        rows = height/D;
+        columns = min(height, width)/D;
+        rows = min(height, width)/D;
     }
 
     public void draw() {
@@ -41,7 +41,7 @@ public class Main extends PApplet {
         textSize(30f);
         text(text,width/2f,30f);
 
-        circle(x,y, D);
+        circle(x,y,D);
 
         if(key==CODED)
         {
@@ -63,18 +63,20 @@ public class Main extends PApplet {
                 dy = D;
             }
         }
+
         x+=dx;
         y+=dy;
 
     }
 
+    // Draws grid
     public void drawGrid()
     {
-        for(int i=1; i<=columns; i++) {
-            for (int j = 1; j <= rows; j++) {
+        for(int i=0; i<columns; i++) {
+            for (int j = 0; j < rows; j++) {
                 float x = i * D;
                 float y = j * D;
-                stroke(0, 0, 255, 20);
+                stroke(0, 0, 255, 10);
                 rect(x, y , D, D);
             }
         }
