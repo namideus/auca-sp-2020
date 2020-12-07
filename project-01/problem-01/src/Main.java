@@ -42,18 +42,22 @@ public class Main extends PApplet {
 
         if(fx1) {
             x1-=10;
-            if(x1==0) fx1 = false;
+            if(x1<=MAX_R)
+                fx1 = false;
         } else {
             x1+=10;
-            if(x1==width) fx1 = true;
+            if(x1>=width-MAX_R)
+                fx1 = true;
         }
 
         if(fy1) {
             y1-=10;
-            if(y1==0) fy1 = false;
+            if(y1<=MAX_R)
+                fy1 = false;
         } else {
             y1+=10;
-            if(y1==height) fy1 = true;
+            if(y1>=height-MAX_R)
+                fy1 = true;
         }
     }
 
@@ -63,18 +67,22 @@ public class Main extends PApplet {
 
         if (fx2) {
             x2 -= 10;
-            if (x2 == 0) fx2 = false;
+            if (x2 <= MAX_R)
+                fx2 = false;
         } else {
             x2 += 10;
-            if (x2 == width) fx2 = true;
+            if (x2>=width-MAX_R)
+                fx2 = true;
         }
 
         if (fy2) {
             y2 -= 10;
-            if (y2 == 0) fy2 = false;
+            if (y2<=MAX_R)
+                fy2 = false;
         } else {
             y2 += 10;
-            if (y2 == height) fy2 = true;
+            if (y2>=height-MAX_R)
+                fy2 = true;
         }
     }
 
@@ -85,18 +93,22 @@ public class Main extends PApplet {
 
         if(fx3) {
             x3-=10;
-            if(x3==0) fx3 = false;
+            if(x3<=MAX_R)
+                fx3 = false;
         } else {
             x3+=10;
-            if(x3==width) fx3 = true;
+            if(x3>=width-MAX_R)
+                fx3 = true;
         }
 
         if(fy3) {
             y3-=10;
-            if(y3==0) fy3 = false;
+            if(y3<=MAX_R)
+                fy3 = false;
         } else {
             y3+=10;
-            if(y3==height) fy3 = true;
+            if(y3>=height-MAX_R)
+                fy3 = true;
         }
     }
 }

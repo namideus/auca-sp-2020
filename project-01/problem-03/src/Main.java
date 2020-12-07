@@ -32,18 +32,22 @@ public class Main extends PApplet {
 
         if(f1) {
             x1-=speed1;
-            if(x1<=textWidth(firstText)/2f) f1 = false;
+            if(x1<=textWidth(firstText)/2f)
+                f1 = false;
         } else {
             x1+=speed1;
-            if(x1>=width-textWidth(firstText)/2f) f1 = true;
+            if(x1>=width-textWidth(firstText)/2f)
+                f1 = true;
         }
 
         if(f2) {
             x2-=speed2;
-            if(x2<=textWidth(secondText)/2f) f2 = false;
+            if(x2<=textWidth(secondText)/2f)
+                f2 = false;
         } else {
             x2+=speed2;
-            if(x2>=width-textWidth(secondText)/2f) f2 = true;
+            if(x2>=width-textWidth(secondText)/2f)
+                f2 = true;
         }
 
         textAlign(CENTER);
