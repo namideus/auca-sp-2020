@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class Main extends PApplet {
 
-    private int fielSize;
+    private float x,y, MAX_R;
 
     public void settings() {
         fullScreen();
@@ -15,13 +15,31 @@ public class Main extends PApplet {
     public void setup() {
         frameRate(30f);
 
+        x = width/2f;
+        y = height/2f;
+
        // fielSize = Integer.getInteger(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        drawGrid(width/2f,height/2f);
+        fill(255,0,0);
+        circle(x,y, 100f);
+
+        if(key==CODED)
+        {
+            if(keyCode==UP)
+                y -= 10;
+            if(keyCode==LEFT)
+                x-=10;
+            if(keyCode==RIGHT)
+                x+=10;
+            if(keyCode==DOWN)
+                y+=10;
+        }
+
+       // drawGrid(width/2f,height/2f);
 
 
 //        for(int i=0; i<fielSize; i++)
@@ -40,7 +58,7 @@ public class Main extends PApplet {
         PApplet.main("Main");
     }
 
-    @Override
+    /*@Override
     public void keyPressed() {
         super.keyPressed();
 
@@ -55,5 +73,5 @@ public class Main extends PApplet {
             if(keyCode==DOWN)
                 System.out.println("DOWN");
         }
-    }
+    }*/
 }
