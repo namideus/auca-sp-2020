@@ -31,7 +31,7 @@ public class Main extends PApplet {
     }
 
     public void draw() {
-        fill(0, 0, 0,50);
+        fill(0, 0, 0,20);
         rect(0,0,width-1,height-1);
 
         drawGrid();
@@ -46,15 +46,19 @@ public class Main extends PApplet {
         if(key==CODED)
         {
             if(keyCode==UP) {
+                text = "You pressed button: UP";
                 dx = 0;
                 dy = -D;
             } else if(keyCode==LEFT) {
+                text = "You pressed button: LEFT";
                 dx = -D;
                 dy = 0;
             } else if(keyCode==RIGHT) {
+                text = "You pressed button: RIGHT";
                 dx = D;
                 dy = 0;
             } else if(keyCode==DOWN) {
+                text = "You pressed button: DOWN";
                 dx = 0;
                 dy = D;
             }
@@ -62,26 +66,18 @@ public class Main extends PApplet {
         x+=dx;
         y+=dy;
 
-       // drawGrid(width/2f,height/2f);
-
-
-//        for(int i=0; i<fielSize; i++)
-//            for(int j=0; j<fielSize; j++)
-//            {
-//
-//            }
     }
 
     public void drawGrid()
     {
-        for(int i=0; i<columns; i++)
-            for(int j=0; j<rows; j++)
-            {
-                float x = i*D;
-                float y = j*D;
-                stroke(0,0,255,20);
-                rect(x,y+D,D,D);
+        for(int i=1; i<=columns; i++) {
+            for (int j = 1; j <= rows; j++) {
+                float x = i * D;
+                float y = j * D;
+                stroke(0, 0, 255, 20);
+                rect(x, y , D, D);
             }
+        }
     }
 
     public static void main(String[] args) {
