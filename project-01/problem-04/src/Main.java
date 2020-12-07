@@ -6,38 +6,61 @@ import java.awt.*;
 
 public class Main extends PApplet {
 
-    private float x,y, MAX_R;
+    private float x,y, dx,dy,columns,rows;
+    private String text;
+    private float D = 50;
 
     public void settings() {
         fullScreen();
+        // size(1000,1000);
+
     }
 
     public void setup() {
-        frameRate(30f);
+        frameRate(40f);
 
+        D = (float) Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
+
+        text = "Press Arrow buttons";
         x = width/2f;
         y = height/2f;
-
-       // fielSize = Integer.getInteger(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
+        dx = D;
+        dy = 0;
+        columns = width/D;
+        rows = height/D;
     }
 
     public void draw() {
-        background(0, 0, 0);
+        fill(0, 0, 0,50);
+        rect(0,0,width-1,height-1);
+
+        drawGrid();
 
         fill(255,0,0);
-        circle(x,y, 100f);
+        textAlign(CENTER);
+        textSize(30f);
+        text(text,width/2f,30f);
+
+        circle(x,y, D);
 
         if(key==CODED)
         {
-            if(keyCode==UP)
-                y -= 10;
-            if(keyCode==LEFT)
-                x-=10;
-            if(keyCode==RIGHT)
-                x+=10;
-            if(keyCode==DOWN)
-                y+=10;
+            if(keyCode==UP) {
+                dx = 0;
+                dy = -D;
+            } else if(keyCode==LEFT) {
+                dx = -D;
+                dy = 0;
+            } else if(keyCode==RIGHT) {
+                dx = D;
+                dy = 0;
+            } else if(keyCode==DOWN) {
+                dx = 0;
+                dy = D;
+            }
         }
+        x+=dx;
+        y+=dy;
 
        // drawGrid(width/2f,height/2f);
 
@@ -49,29 +72,19 @@ public class Main extends PApplet {
 //            }
     }
 
-    public void drawGrid(float x, float y)
+    public void drawGrid()
     {
-        line(x,10f,x,height-10f);
+        for(int i=0; i<columns; i++)
+            for(int j=0; j<rows; j++)
+            {
+                float x = i*D;
+                float y = j*D;
+                stroke(0,0,255,20);
+                rect(x,y+D,D,D);
+            }
     }
 
     public static void main(String[] args) {
         PApplet.main("Main");
     }
-
-    /*@Override
-    public void keyPressed() {
-        super.keyPressed();
-
-        if(key==CODED)
-        {
-            if(keyCode==UP)
-                System.out.println("UP");
-            if(keyCode==LEFT)
-                System.out.println("LEFT");
-            if(keyCode==RIGHT)
-                System.out.println("RIGHT");
-            if(keyCode==DOWN)
-                System.out.println("DOWN");
-        }
-    }*/
 }
