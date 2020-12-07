@@ -24,10 +24,7 @@ public class Problem02 {
             System.exit(2);
         }
 
-        // February and leap year?
-        int days = (month==2 && isLeapYear(year)) ? monthDays[month-1]+1 : monthDays[month-1];
-
-        System.out.println("Number of days: "+days);
+        System.out.println("Number of days: " + getNumberOfDays(month, year));
     }
 
     // Is leap year
@@ -36,8 +33,10 @@ public class Problem02 {
         return year%4==0 && year%100>0 || year%400==0;
     }
 
-    private static int getNumberOfDays()
+    // Get the number of days in a particular month
+    private static int getNumberOfDays(int month, int year)
     {
-        return 0;
+        // February and leap year?
+        return (month==2 && isLeapYear(year)) ? monthDays[month-1]+1 : monthDays[month-1];
     }
 }

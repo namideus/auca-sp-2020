@@ -7,17 +7,23 @@ public class Problem04 {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("A = ");
-        String As = scan.nextLine();
+        String A = scan.nextLine();
 
         System.out.print("B = ");
-        String Bs = scan.nextLine();
+        String B = scan.nextLine();
 
+        String result = GCD(A,B);
+
+        System.out.printf("GCD(%s, %s) = %s\n", A, B,
+                (!result.equals("0")) ? result : "is not defined.");
+    }
+
+    public static String GCD(String As, String Bs)
+    {
         BigInteger result, A, B;
         A = new BigInteger(As);
         B = new BigInteger(Bs);
         result = A.gcd(B);
-
-        System.out.printf("GCD(%s, %s) = %s\n", As, Bs,
-                (!result.toString().equals("0")) ? result.toString() : "is not defined.");
+        return result.toString();
     }
 }
