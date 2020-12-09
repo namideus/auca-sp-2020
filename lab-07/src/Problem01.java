@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Problem01 {
 
-    private static int cnt[] = new int[13];
+    private static int[] cnt = new int[13];
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -13,8 +13,7 @@ public class Problem01 {
 
         while(n>0)
         {
-            cnt[r.nextInt(11)+2]++;
-            cnt[r.nextInt(11)+2]++;
+            ++cnt[r.nextInt(6)+r.nextInt(6)+2];
             n--;
         }
 
