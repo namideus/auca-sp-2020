@@ -7,23 +7,39 @@ public class Problem04 {
         Scanner scan = new Scanner(System.in);
 
         System.out.print("A = ");
-        String A = scan.nextLine();
+        int a = scan.nextInt();
 
         System.out.print("B = ");
-        String B = scan.nextLine();
+        int b = scan.nextInt();
 
-        String result = GCD(A,B);
+        try {
+            System.out.printf("GCD(%d, %d) = %d\n", a, b, gcd(a, b));
+        } catch(IllegalArgumentException error)
+        {
+            System.out.println(error.getMessage());
+        }
 
-        System.out.printf("GCD(%s, %s) = %s\n", A, B,
-                (!result.equals("0")) ? result : "is not defined.");
     }
 
-    public static String GCD(String As, String Bs)
+    public static int gcd(int a, int b)
     {
-        BigInteger result, A, B;
-        A = new BigInteger(As);
-        B = new BigInteger(Bs);
-        result = A.gcd(B);
-        return result.toString();
+        if(a==0 && b==0)
+            throw new IllegalArgumentException("GCD(0, 0) is not defined");
+
+        a = Math.abs(a);
+        b = Math.abs(b);
+
+        if(a==0 || b==0)
+            return Math.max(a,b);
+
+        int d = Math.min(a,b);
+
+        while(a % d != 0 || b % d != 0)
+        {
+            --d;
+        }
+
+        return d;
     }
+
 }

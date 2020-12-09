@@ -14,17 +14,20 @@ public class Problem05 {
         System.out.printf("GCD(%d, %d) = %s\n", A,B, (GCD(A,B)>0) ? GCD(A,B)+"" : "is not defined.");
     }
 
-    public static int GCD(int A, int B)
+    public static int GCD(int a, int b)
     {
-        int R; // Remainder
+        a = Math.abs(a);
+        b = Math.abs(b);
 
-        while(A != 0) // While greater than 0
+        int r;
+
+        while(a != 0)
         {
-            R = B % A; // B mod A
-            B = A; // B = A
-            A = R; // A = remainder
+            r = b % a;
+            b = a;
+            a = r;
         }
 
-        return B;
+        return b;
     }
 }
