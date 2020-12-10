@@ -6,13 +6,13 @@ import java.awt.*;
 
 public class Main extends PApplet {
 
-    private float x,y, dx,dy,columns,rows;
+    private float x,y, dx,dy,size;
     private String text;
     private float D = 50;
 
     public void settings() {
-        //fullScreen();
-        size(1000,1000);
+        fullScreen();
+        // size(1000,1000);
 
     }
 
@@ -26,8 +26,7 @@ public class Main extends PApplet {
         y = height/2f;
         dx = D;
         dy = 0;
-        columns = min(height, width)/D;
-        rows = min(height, width)/D;
+        size = min(height, width);
     }
 
     public void draw() {
@@ -72,10 +71,8 @@ public class Main extends PApplet {
     // Draws grid
     public void drawGrid()
     {
-        for(int i=0; i<columns; i++) {
-            for (int j = 0; j < rows; j++) {
-                float x = i * D;
-                float y = j * D;
+        for(float x=width/2f-size/2, i=0; i<size/D-2; x+=D, i++) {
+            for (float y = 40f, j=0; j<size/D-2; y+=D, j++) {
                 stroke(0, 0, 255, 10);
                 rect(x, y , D, D);
             }
