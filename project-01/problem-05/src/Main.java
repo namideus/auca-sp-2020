@@ -1,8 +1,11 @@
 import processing.core.*;
 
+import javax.swing.*;
+
 public class Main extends PApplet {
 
     private float x,y,z, dx,dy,columns,rows;
+    private int size;
     private String text;
     private float D = 50;
 
@@ -11,23 +14,22 @@ public class Main extends PApplet {
     }
 
     public void setup() {
-        columns = min(height,width)/D;
-        rows = min(height,width)/D;
-        z = 0;
+        size = Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
     }
 
     public void draw() {
         background(0,0,0);
 
-        for(int row=0; y<height; y+=D) {
-            for (int x = 0; x <width; x+=D) {
-                if(z%2!=0)
+        for(int row=0; row<size; row++) {
+            for (int column = 0; column<size; x++) {
+                x+=500f/size;
+                y+=500f/size;
+                if((x+y)%2!=0)
                     fill(255,0,0);
                 else
                     fill(0,0,255);
-                z++;
                 stroke(0);
-                rect(x, y , D, D);
+                rect(x, y , x, x);
             }
         }
     }
