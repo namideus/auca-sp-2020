@@ -8,8 +8,8 @@ public class Main extends PApplet {
     float moonAngle = 0;
     float moonSpeed = 0.3f;
 
-//    float mercuryAngle = 0;
-//    float mercurySpeed = 0.09f;
+    float mercuryAngle = 0;
+    float mercurySpeed = 0.09f;
 
     public void settings() {
         fullScreen();
@@ -24,17 +24,21 @@ public class Main extends PApplet {
         translate(width/2f,height/2f);
         fill(255,255,0);
         circle(0,0,200); // The Sun
+
+        pushMatrix();
         rotate(earthAngle);
         // The Earth
         fill(0,0,255);
         circle(width/6f, 0, 50);
-        earthAngle+=earthSpeed; // Increment angle
 
         // Moon
         translate(width/6f, 0);
         rotate(moonAngle);
         fill(255,255,255);
         circle(width/20f,0,20);
+        popMatrix();
+
+        earthAngle+=earthSpeed; // Increment angle
         moonAngle+=moonSpeed; // Increment angle
     }
 
