@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class Main extends PApplet {
 
-    private float x,y, dx,dy,size = 1000;
+    private float x,y, dx,dy,size = 1000,limitX1,limitX2,limitY1,limitY2;
     private String text;
     private float D = 50;
 
@@ -20,8 +20,10 @@ public class Main extends PApplet {
         D = (float) Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
 
         text = "Press Arrow buttons";
-        // x = width/2f;
+
         x = width/2f-size/2+D/2;
+        limitX1 = width/2f-size/2+D/2;
+        limitX2 = width/2f+size/2-D/2;
         y = 40f+D/2;
         dx = 0;
         dy = 0;
@@ -65,6 +67,9 @@ public class Main extends PApplet {
                 dy = D;
             }
         }
+
+//        if(x==limitX2)
+//            dx = 0;
 
         x+=dx;
         y+=dy;
