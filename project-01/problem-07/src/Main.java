@@ -2,13 +2,16 @@ import processing.core.*;
 
 public class Main extends PApplet {
 
-    float earthAngle = 0;
+    // Earth data
+    float earthAngle = PI/8;
     float earthSpeed = 0.05f;
 
-    float moonAngle = 0;
+    // Moon data
+    float moonAngle = PI/4;
     float moonSpeed = 0.3f;
 
-    float mercuryAngle = 0;
+    // Mercury data
+    float mercuryAngle = PI/2;
     float mercurySpeed = 0.09f;
 
     public void settings() {
@@ -38,6 +41,11 @@ public class Main extends PApplet {
         circle(width/20f,0,20);
         popMatrix();
 
+        rotate(mercuryAngle);
+        fill(255,0,0);
+        circle(width/12f,0,30);
+
+        mercuryAngle += mercurySpeed;
         earthAngle+=earthSpeed; // Increment angle
         moonAngle+=moonSpeed; // Increment angle
     }
