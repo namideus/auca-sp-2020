@@ -6,14 +6,12 @@ import java.awt.*;
 
 public class Main extends PApplet {
 
-    private float x,y, dx,dy,size;
+    private float x,y, dx,dy,size = 1000;
     private String text;
     private float D = 50;
 
     public void settings() {
         fullScreen();
-        // size(1000,1000);
-
     }
 
     public void setup() {
@@ -22,18 +20,23 @@ public class Main extends PApplet {
         D = (float) Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
 
         text = "Press Arrow buttons";
-        x = width/2f;
-        y = height/2f;
-        dx = D;
+        // x = width/2f;
+        x = width/2f-size/2+D/2;
+        y = 40f+D/2;
+        dx = 0;
         dy = 0;
-        size = min(height, width);
     }
 
     public void draw() {
         fill(0, 0, 0,20);
         rect(0,0,width-1,height-1);
 
-        drawGrid();
+        for(float x=width/2f-size/2, i=0; i<size/D-3; x+=D, i++) {
+            for (float y = 40f, j=0; j<size/D-3; y+=D, j++) {
+                stroke(0, 0, 255, 10);
+                rect(x, y , D, D);
+            }
+        }
 
         fill(255,0,0);
         textAlign(CENTER);
@@ -66,17 +69,6 @@ public class Main extends PApplet {
         x+=dx;
         y+=dy;
 
-    }
-
-    // Draws grid
-    public void drawGrid()
-    {
-        for(float x=width/2f-size/2, i=0; i<size/D-2; x+=D, i++) {
-            for (float y = 40f, j=0; j<size/D-2; y+=D, j++) {
-                stroke(0, 0, 255, 10);
-                rect(x, y , D, D);
-            }
-        }
     }
 
     public static void main(String[] args) {
