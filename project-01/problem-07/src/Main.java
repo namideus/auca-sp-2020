@@ -30,6 +30,12 @@ public class Main extends PApplet {
         circle(width/6f, 0, 50);
         earthAngle+=earthSpeed; // Increment angle
 
+        // Moon
+        translate(width/6f, 0);
+        rotate(moonAngle);
+        fill(255,255,255);
+        circle(width/20f,0,20);
+        moonAngle+=moonSpeed; // Increment angle
     }
 
     public static void main(String[] args) {
