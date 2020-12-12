@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Problem02 {
 
     public static void main(String[] args) {
+
         int correctCount;
+
         char[][] answers = {
                 {'A','B','C','D','E','B','B','D','D','C'},
                 {'B','C','C','D','A','B','D','D','A','A'},
@@ -15,19 +17,17 @@ public class Problem02 {
                 {'A','B','B','B','B','B','B','D','D','C'}
         };
 
-        char[] keys =   {'A','A','C','D','E','A','B','E','B','C'};
+        char[] keys = {'A','A','C','D','E','A','B','E','B','C'};
         int[] correctAnswers = new int[answers.length];
 
         for(int i=0; i<answers.length; i++)
         {
             correctCount = 0;
-
             for(int j=0; j<answers[i].length; j++)
             {
                 if (answers[i][j]==keys[j])
                     correctCount++;
             }
-
             correctAnswers[i] = correctCount;
         }
 
