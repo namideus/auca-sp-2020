@@ -18,11 +18,16 @@ public class Main2 extends PApplet {
     public void draw() {
         background(0, 0, 0);
 
+        textAlign(CENTER);
+        fill(255);
+        textSize(20f);
+        text("The center of the circle is outside of both rectangles",width/2f,150f);
+
         fill(0,0,255);
-        circle(mouseX, mouseY,100f);
+        circle(mouseX, mouseY,50f);
 
         stroke(255);
-        fill(0,0,0);
+        fill(0,0,0,0);
         rect(width/5f,height/4f,350f, 500f);
 
         rect(width/1.7f,height/4f,350f, 500f);
