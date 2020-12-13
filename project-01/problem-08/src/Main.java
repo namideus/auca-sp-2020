@@ -2,21 +2,29 @@ import processing.core.*;
 
 public class Main extends PApplet {
 
+    private float angle = 0, dangle = 0.6f;
+
     public void settings() {
         fullScreen();
     }
 
     public void setup() {
-        noLoop();
+     //   noLoop();
     }
 
     public void draw() {
         background(0, 0, 0);
+
+        translate(width/2f,height/2f);
+        rotate(angle);
+
         drawStar(width/2f, height/2f,min(width, height)/3f, 0,0,255);
         drawStar(width/4f, height/4f,min(width, height)/6f, 255,0,255);
-        drawStar(width - width/4f, height/4f,min(width, height)/6f, 255,0,255);
-        drawStar(width/4f, height-height/4f,min(width, height)/6f, 255,0,255);
-        drawStar(width-width/4f, height-height/4f,min(width, height)/6f, 255,0,255);
+//        drawStar(width - width/4f, height/4f,min(width, height)/6f, 255,0,255);
+//        drawStar(width/4f, height-height/4f,min(width, height)/6f, 255,0,255);
+//        drawStar(width-width/4f, height-height/4f,min(width, height)/6f, 255,0,255);
+
+        angle+=dangle;
     }
 
     public static void main(String[] args) {
