@@ -26,6 +26,7 @@ public class Main extends PApplet {
 
         for(int i=0; i<flakeNumber; i++) {
             flakes[i].show();
+            flakes[i].rotate();
             flakes[i].fall();
         }
     }
@@ -58,12 +59,12 @@ public class Main extends PApplet {
         {
             PShape s = createShape();
             s.beginShape();
-            s.fill(0, 0, 255);
-            s.noStroke();
+            s.fill(255, 255, 255);
             s.vertex(0, 0);
             s.vertex(0, 50);
             s.vertex(50, 50);
             s.vertex(50, 0);
+            s.translate(-25+x,-25+y);
             s.rotate(angle);
             s.endShape(CLOSE);
             shape(s,x,y);
