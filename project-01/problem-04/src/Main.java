@@ -6,7 +6,9 @@ import java.awt.*;
 
 public class Main extends PApplet {
 
-    private float x,y, dx,dy,size = 1000,limitX1,limitX2,limitY1,limitY2;
+    private float x,y, dx,dy;
+    private int BLOCKX, BLOCKY, size;
+    private final int WIDTH = 500, HEIGHT = 500;
     private String text;
     private float D = 50;
 
@@ -17,14 +19,13 @@ public class Main extends PApplet {
     public void setup() {
         frameRate(40f);
 
-        D = (float) Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
+        size = Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
+
+        BLOCKX = WIDTH/size;
+        BLOCKY = HEIGHT/size;
 
         text = "Press Arrow buttons";
 
-        x = width/2f-size/2+D/2;
-        limitX1 = width/2f-size/2+D/2;
-        limitX2 = width/2f+size/2-D/2;
-        y = 40f+D/2;
         dx = 0;
         dy = 0;
     }
@@ -33,10 +34,10 @@ public class Main extends PApplet {
         fill(0, 0, 0,20);
         rect(0,0,width-1,height-1);
 
-        for(float x=width/2f-size/2, i=0; i<size/D-3; x+=D, i++) {
-            for (float y = 40f, j=0; j<size/D-3; y+=D, j++) {
+        for (int i = 0; i < size; i ++) {
+            for (int j = 0; j < size; j ++) {
                 stroke(0, 0, 255, 10);
-                rect(x, y , D, D);
+                rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
             }
         }
 
@@ -45,7 +46,7 @@ public class Main extends PApplet {
         textSize(30f);
         text(text,width/2f,30f);
 
-        circle(x,y,D);
+        circle(x,y,BLOCKX);
 
         if(key==CODED)
         {
@@ -67,9 +68,6 @@ public class Main extends PApplet {
                 dy = D;
             }
         }
-
-//        if(x==limitX2)
-//            dx = 0;
 
         x+=dx;
         y+=dy;
