@@ -7,7 +7,6 @@ public class Main extends PApplet {
     private int starNumber;
     private float[] coordsX;
     private float[] coordsY;
-    private PShape snow;
 
     public void settings() {
         fullScreen();
@@ -45,13 +44,13 @@ public class Main extends PApplet {
 
         float y1 = y-r;
         float y2 = y+r;
-        line(x,y1-7f,x,y2+7f);
+        line(x,y1,x,y2);
         line(x-30f,y1,x+30f,y2);
         line(x+30f,y1,x-30f,y2);
 
         float x3 = x-r;
         float x4 = x+r;
-        line(x3-7f,y,x4+7f,y);
+        line(x3,y,x4,y);
         line(x3,y-30f,x4,y+30f);
         line(x3,y+30f,x4,y-30f);
     }
