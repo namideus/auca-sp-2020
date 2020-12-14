@@ -5,28 +5,40 @@ import javax.swing.*;
 public class Main extends PApplet {
 
     private int starNumber;
+    private float[] coordsX;
+    private float[] coordsY;
     private PShape snow;
 
     public void settings() {
         fullScreen();
+        noLoop();
     }
 
     public void setup() {
         starNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of stars:").trim());
 
+        coordsX = new float[starNumber];
+        coordsY = new float[starNumber];
+
+        for(int i=0; i<starNumber; i++)
+        {
+            coordsX[i] = random(width);
+            coordsY[i] = random(height);
+        }
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        drawStar(width/2f, height/2f, 50f,0,0,255);
+        for(int i=0; i<starNumber; i++)
+        {
+            drawStar(coordsX[i], coordsY[i],
+                    random(30),random(255), random(255),random(255),
+                    random(30f));
+        }
     }
 
-    public static void main(String[] args) {
-        PApplet.main("Main");
-    }
-
-    public void drawStar(float x, float y, float r, float blue, float green, float red)
+    public void drawStar(float x, float y, float r, float blue, float green, float red, float angle)
     {
         strokeWeight(4f);
         stroke(red,green,blue);
@@ -42,6 +54,10 @@ public class Main extends PApplet {
         line(x3-7f,y,x4+7f,y);
         line(x3,y-30f,x4,y+30f);
         line(x3,y+30f,x4,y-30f);
+    }
+
+    public static void main(String[] args) {
+        PApplet.main("Main");
     }
 
 /*    public void animateCircle3()
