@@ -20,19 +20,20 @@ public class Main5 extends PApplet {
     @Override
     public void settings() {
         super.settings();
-        fullScreen();
-        //size(WIDTH, HEIGHT);
+        // fullScreen();
+        size(WIDTH, HEIGHT);
     }
 
     public void setup() {
-        noLoop();
         size = Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
         BLOCKX = WIDTH/size;
         BLOCKY = HEIGHT/size;
     }
 
     public void draw() {
-        background(0,0,0);
+        // rectMode(CENTER);
+        fill(0, 0, 0,100);
+        rect(0,0,width-1,height-1);
 
         for (int i = 0; i < size; i ++) {
             for (int j = 0; j < size; j ++) {
@@ -41,7 +42,6 @@ public class Main5 extends PApplet {
                 } else {
                     fill(0, 0, 0); // black
                 }
-                rectMode(CENTER);
                 rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
             }
         }
