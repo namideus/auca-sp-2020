@@ -20,16 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="186e8b96-3a9e-438b-86e5-8d3a7ca69501" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/description.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/project-template.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project-02.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../URI_midterm/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../URI_midterm/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../URI_midterm/defence_midterm/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../URI_midterm/defence_midterm/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../URI_oop/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../URI_oop/.idea/misc.xml" afterDir="false" />
@@ -38,8 +28,6 @@
       <change beforePath="$PROJECT_DIR$/../lab-01/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-01/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab-04/src/com/auca/Problem01.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-04/src/com/auca/Problem01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab-05/src/Problem10.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-05/src/Problem10.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab-08/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-08/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../lab-08/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab-08/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
@@ -62,7 +50,10 @@
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem08.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem09.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem10.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project-01/problem-05/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-05/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project-01/problem-04/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-04/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project-01/problem-07/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-07/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem-01/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-01/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +63,13 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -79,13 +77,19 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1lSabzMlgYhGtjgKGPQSkJWFWn5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-01" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -132,5 +136,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
