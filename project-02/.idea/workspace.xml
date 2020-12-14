@@ -20,10 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="186e8b96-3a9e-438b-86e5-8d3a7ca69501" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/problem-02/problem-02.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/problem-02/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/problem-03/problem-03.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/problem-04/problem-04.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../URI_midterm/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../URI_midterm/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../URI_midterm/defence_midterm/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../URI_midterm/defence_midterm/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../URI_oop/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../URI_oop/.idea/misc.xml" afterDir="false" />
@@ -56,10 +52,8 @@
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem10.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../project-01/problem-04/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-04/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../project-01/problem-07/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-07/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem-01/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-01/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem-02/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-02/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

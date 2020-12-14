@@ -15,11 +15,18 @@ public class Main extends PApplet {
 
     public void setup() {
         flakeNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of flakes:").trim());
+        flakes = new Snowflake[flakeNumber];
+        for(int i=0; i<flakeNumber; i++)
+            flakes[i] = new Snowflake();
     }
 
     public void draw() {
         background(0, 0, 0);
 
+        for(int i=0; i<flakeNumber; i++) {
+            flakes[i].show();
+            flakes[i].fall();
+        }
     }
 
     public static void main(String[] args) {
@@ -30,11 +37,21 @@ public class Main extends PApplet {
         float x = random(width);
         float y = random(-200,-100);
         float r = random(5,10);
+        float angle = random(0,360);
         float yspeed = random(5,11);
+        float rspeed = random(3,6);
 
         void fall()
         {
-            y+=yspeed;
+            y += yspeed;
+
+            if(y>height)
+                y = random(-200,-100);
+        }
+
+        void rotate()
+        {
+            angle += rspeed;
         }
 
         void show()
