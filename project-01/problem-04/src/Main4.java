@@ -62,33 +62,42 @@ public class Main4 extends PApplet {
             {
                 text = "You pressed button: UP";
                 dx = 0;
-                dy = -BLOCK;
+
+                if(limY1+BLOCK/2f<y)
+                    dy = -BLOCK;
+                else
+                    dy = 0;
             } else if(keyCode==LEFT)
             {
                 text = "You pressed button: LEFT";
-                dx = -BLOCK;
                 dy = 0;
+
+                if(x>limX1+BLOCK/2f)
+                    dx = -BLOCK;
+                else
+                    dx = 0;
             } else if(keyCode==RIGHT)
             {
                 text = "You pressed button: RIGHT";
-                dx = BLOCK;
                 dy = 0;
+
+                if(x<limX2-BLOCK/2f)
+                    dx = BLOCK;
+                else
+                    dx = 0;
             } else if(keyCode==DOWN)
             {
                 text = "You pressed button: DOWN";
                 dx = 0;
-                dy = BLOCK;
+                if(limY2-BLOCK/2f>y)
+                    dy = BLOCK;
+                else
+                    dy = 0;
             }
         }
 
-        if(limX1<x && limX2>x && limY1<y && limY2>y) {
-            x += dx;
-            y += dy;
-        } else
-        {
-            dx = 0;
-            dy = 0;
-        }
+        x += dx;
+        y += dy;
     }
 
     public static void main(String[] args) {
