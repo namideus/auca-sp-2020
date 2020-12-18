@@ -1,5 +1,7 @@
 import processing.core.*;
 
+import javax.swing.*;
+
 public class Main extends PApplet {
 
     private final int MAX_EXTEND = 100;
@@ -7,6 +9,9 @@ public class Main extends PApplet {
     private boolean fx,fy;
     private float angle = 0;
     private float dangle = .1f;
+    private int numberOfRects,
+            BLOCKX, BLOCKY,
+            WIDTH = 500,HEIGHT = 500;
 
     public void settings() {
         fullScreen();
@@ -18,6 +23,14 @@ public class Main extends PApplet {
 
         x1 = width/2f;
         y1 = height/2f;
+
+        numberOfRects = Integer.parseInt(
+                JOptionPane.showInputDialog(
+                        "Enter the number of rectangles in a row [2, 8]:"
+                ).trim());
+
+        BLOCKX = WIDTH/numberOfRects;
+        BLOCKY = HEIGHT/numberOfRects;
     }
 
     public void draw() {
@@ -33,10 +46,22 @@ public class Main extends PApplet {
 
     public void animateRects()
     {
+
         translate(x1,y1);
         rotate(angle);
         fill(255);
         rect(-50,-50,100,100);
+
+        for (int i = 0; i < numberOfRects; i ++) {
+            for (int j = 0; j < numberOfRects; j ++) {
+                if ((i + j + 1) % 2 == 0) {
+                    fill(255, 255, 255); // white
+                } else {
+                    fill(0, 0, 0); // black
+                }
+                rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
+            }
+        }
 
         if(fx) {
             x1-=10;
