@@ -38,7 +38,7 @@ public class Main extends PApplet {
         for (int i = 0; i < size; i ++) {
             for (int j = 0; j < size; j ++) {
                 stroke(0, 0, 255, 10);
-                rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
+                rect(i * BLOCKX, j * BLOCKY, BLOCKX, BLOCKY);
             }
         }
 

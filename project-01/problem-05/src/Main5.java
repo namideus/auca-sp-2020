@@ -52,3 +52,21 @@ public class Main5 extends PApplet {
     }
 
 }
+
+  /*  void setup() {
+        size(800, 800);
+    }
+
+    void draw() {
+        background(255);
+        for (int x = 0; x < 8; x++) {
+            for (int y = 0; y < 8; y++) {
+                if ((x+y)%2 == 0) {
+                    fill(255);
+                } else {
+                    fill(0);
+                }
+                rect(x * 100, y * 100, 100, 100);
+            }
+        }
+    }*/
