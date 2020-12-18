@@ -23,8 +23,6 @@ public class Main extends PApplet {
 
         speed1 = width/textWidth(firstText);
         speed2 = width/textWidth(secondText);
-
-        // speed = distance / time
     }
 
     public void draw() {
