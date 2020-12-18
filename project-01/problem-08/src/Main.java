@@ -19,12 +19,20 @@ public class Main extends PApplet {
         translate(width*.5f, height*.5f);
 
         pushMatrix();
-        rotate(frameCount/30f);
+      //  rotate(frameCount/30f);
         drawStar(0, 0, 200f, 0, 0, 255);
 
-        translate(width/9f, 0);
-        // rotate(frameCount/40f);
-        drawStar(width/9f, 0, 50f, 0, 0, 255);
+        pushMatrix();
+        translate(width/6f, 0);
+     //   rotate(-frameCount/10f);
+        drawStar(0, 0, 50f, 255, 0, 0);
+        popMatrix();
+
+        pushMatrix();
+        translate(width/8f, 0);
+        rotate(-frameCount/30f);
+        drawStar(0, 0, 50f, 255, 0, 0);
+        popMatrix();
 
         popMatrix();
 
