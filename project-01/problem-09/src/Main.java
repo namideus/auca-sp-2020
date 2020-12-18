@@ -38,18 +38,9 @@ public class Main extends PApplet {
         fill(0,0,0,60);
         rect(0,0,width-1,height-1);
 
-        for (float i = 0; i < numberOfRects; i+=1.2f)
-        {
-            for (float j = 0; j < numberOfRects; j+=1.2f)
-            {
-                // translate(i * BLOCK,j * BLOCK);
-                fill(255);
-                stroke(0);
-                rect(i * BLOCK, j * BLOCK, BLOCK,BLOCK);
-            }
-        }
-
         animateRects();
+
+        animateRect();
     }
 
     public static void main(String[] args) {
@@ -58,17 +49,24 @@ public class Main extends PApplet {
 
     public void animateRects()
     {
+        for (float i = 0; i < numberOfRects; i+=1.2f)
+        {
+            for (float j = 0; j < numberOfRects; j+=1.2f)
+            {
+                translate(i * BLOCK,j * BLOCK);
+                fill(255);
+                rect(i * BLOCK, j * BLOCK, BLOCK, BLOCK);
+            }
+        }
+    }
+
+    public void animateRect()
+    {
 
         translate(x1,y1);
         rotate(angle);
         fill(255);
         rect(-50,-50,100,100);
-
-//        for (int i = 0; i < numberOfRects; i ++) {
-//            for (int j = 0; j < numberOfRects; j ++) {
-//                rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
-//            }
-//        }
 
         if(fx) {
             x1-=10;
