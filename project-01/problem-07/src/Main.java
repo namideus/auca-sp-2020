@@ -30,6 +30,7 @@ public class Main extends PApplet {
 
         pushMatrix();
         rotate(earthAngle);
+
         // The Earth
         fill(0,0,255);
         circle(width/6f, 0, 50);

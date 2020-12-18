@@ -8,12 +8,13 @@ public class Main extends PApplet {
 
     private float x,y, dx,dy;
     private int BLOCKX, BLOCKY, size;
-    private final int WIDTH = 500, HEIGHT = 500;
+    private final int WIDTH = 1000, HEIGHT = 1000;
     private String text;
     private float D = 50;
 
     public void settings() {
-        fullScreen();
+        // fullScreen();
+        size(WIDTH, HEIGHT);
     }
 
     public void setup() {
