@@ -1,8 +1,10 @@
 import processing.core.*;
 
+import javax.swing.*;
+
 public class Main extends PApplet {
 
-    private float angle = 0, dangle = 0.6f;
+    private int starNumber = 4;
 
     public void settings() {
         fullScreen();
@@ -10,7 +12,8 @@ public class Main extends PApplet {
 
     public void setup() {
         frameRate(50f);
-     //   noLoop();
+
+        starNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of stars [4,10]:").trim());
     }
 
     public void draw() {
@@ -19,24 +22,44 @@ public class Main extends PApplet {
         translate(width*.5f, height*.5f);
 
         pushMatrix();
-      //  rotate(frameCount/30f);
+        rotate(frameCount/30f);
         drawStar(0, 0, 200f, 0, 0, 255);
 
         pushMatrix();
         translate(width/6f, 0);
-     //   rotate(-frameCount/10f);
+        rotate(-frameCount/10f);
         drawStar(0, 0, 50f, 255, 0, 0);
         popMatrix();
 
         pushMatrix();
-        translate(width/8f, 0);
-        rotate(-frameCount/30f);
+        translate(-width/6f, 0);
+        rotate(-frameCount/10f);
         drawStar(0, 0, 50f, 255, 0, 0);
         popMatrix();
 
+        pushMatrix();
+        translate(0 , height/3.5f);
+        rotate(-frameCount/10f);
+        drawStar(0, 0, 50f, 255, 0, 0);
         popMatrix();
 
-        angle+=dangle;
+        pushMatrix();
+        translate(0 , -height/3.5f);
+        rotate(-frameCount/10f);
+        drawStar(0, 0, 50f, 255, 0, 0);
+        popMatrix();
+
+       /* for(int i=0; i<starNumber; i++)
+        {
+            pushMatrix();
+            translate(width/6f, 0); //
+            rotate(-frameCount/10f);
+            drawStar(0, 0, 50f, 255, 0, 0);
+            popMatrix();
+        }*/
+
+        popMatrix();
+
     }
 
     public static void main(String[] args) {
