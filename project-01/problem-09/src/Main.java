@@ -11,6 +11,7 @@ public class Main extends PApplet {
     private int WIDTH = 300,HEIGHT = 300;
     private float dangle = .1f;
     private int numberOfRects;
+    private float pointsXY[][];
 
     public void settings() {
         fullScreen();
@@ -28,6 +29,8 @@ public class Main extends PApplet {
                         "Enter the number of rectangles in a row [2, 8]:"
                 ).trim());
 
+        pointsXY = new float[numberOfRects][2];
+
         BLOCK = (float)WIDTH/numberOfRects;
     }
 
@@ -35,11 +38,11 @@ public class Main extends PApplet {
         fill(0,0,0,60);
         rect(0,0,width-1,height-1);
 
-        for (int i = 0; i < numberOfRects; i++)
+        for (float i = 0; i < numberOfRects; i+=1.2f)
         {
-            for (int j = 0; j < numberOfRects; j++)
+            for (float j = 0; j < numberOfRects; j+=1.2f)
             {
-             //   translate(i * BLOCK,j * BLOCK);
+                // translate(i * BLOCK,j * BLOCK);
                 fill(255);
                 stroke(0);
                 rect(i * BLOCK, j * BLOCK, BLOCK,BLOCK);
