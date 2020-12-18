@@ -16,36 +16,21 @@ public class Main extends PApplet {
     public void draw() {
         background(0, 0, 0);
 
-        pushMatrix();
         translate(width*.5f, height*.5f);
-        rotate(angle);
-        drawStar(0, 0, 200f, 255, 0, 255);
+
+        pushMatrix();
+        rotate(frameCount/40f);
+        drawStar(0, 0, 200f, 0, 0, 255);
+
+//        pushMatrix();
+//        translate(width*.5f, height*.5f);
+//        rotate(frameCount/40f);
+//        drawStar(0, 0, 200f, 0, 0, 255);
+//        popMatrix();
+
         popMatrix();
 
         angle+=dangle;
-
-//        pushMatrix();
-//        translate(width*0.5, height*0.5);
-//        rotate(frameCount / 400.0);
-//        star(0, 0, 80, 100, 40);
-//        popMatrix();
-//
-//        pushMatrix();
-//        translate(width*0.8, height*0.5);
-//        rotate(frameCount / -100.0);
-//        star(0, 0, 30, 70, 5);
-//        popMatrix();
-
-       // translate(width/2f,height/2f);
-      //  rotate(angle);
-
-    //   drawStar(width/2f, height/2f,min(width, height)/3f, 0,0,255);
-    //    drawStar(width/4f, height/4f,min(width, height)/6f, 255,0,255);
-//        drawStar(width - width/4f, height/4f,min(width, height)/6f, 255,0,255);
-//        drawStar(width/4f, height-height/4f,min(width, height)/6f, 255,0,255);
-//        drawStar(width-width/4f, height-height/4f,min(width, height)/6f, 255,0,255);
-
-       // angle+=dangle;
     }
 
     public static void main(String[] args) {
