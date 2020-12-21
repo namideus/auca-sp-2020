@@ -38,21 +38,17 @@ public class Main09 extends PApplet {
         fill(0,0,0,60);
         rect(0,0,width-1,height-1);
 
-        float r = 0.2f;
-
-        for (int i = 0; i < numberOfRects; i++) //1.2f)
+        for (int i = 1; i <= numberOfRects; i++) //1.2f)
         {
-            for (int j = 0; j < numberOfRects; j++) //1.2f)
+            for (int j = 1; j <= numberOfRects; j++) //1.2f)
             {
                 translate(i * BLOCK,j * BLOCK);
                 rotate(frameCount/30f);
                 fill(255);
-                rect(0,0, BLOCK, BLOCK);
+                rect(-BLOCK*.5f,-BLOCK*.5f, BLOCK, BLOCK);
                 resetMatrix();
             }
         }
-
-        r+=0.2;
 
        // animateRects();
 
