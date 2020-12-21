@@ -11,8 +11,10 @@ public class Main09 extends PApplet {
     private int WIDTH = 300,HEIGHT = 300;
     private float dangle = .1f;
     private int numberOfRects;
-    private float pointsX[][];
-    private float pointsY[][];
+    private float pointX[][];
+    private float pointY[][];
+    private float pointsXY[][];
+
 
     public void settings() {
         fullScreen();
@@ -30,8 +32,8 @@ public class Main09 extends PApplet {
                         "Enter the number of rectangles in a row [2, 8]:"
                 ).trim());
 
-        pointsX = new float[numberOfRects][numberOfRects];
-        pointsY = new float[numberOfRects][numberOfRects];
+        pointX = new float[numberOfRects][numberOfRects];
+        pointY = new float[numberOfRects][numberOfRects];
 
         BLOCK = (float)WIDTH/numberOfRects;
 
@@ -39,12 +41,10 @@ public class Main09 extends PApplet {
     }
 
     public void draw() {
-        fill(0,0,0,60);
+        fill(0,0,0,40);
         rect(0,0,width-1,height-1);
 
         animateRects();
-
-        // animateRect();
     }
 
     public static void main(String[] args) {
@@ -57,10 +57,10 @@ public class Main09 extends PApplet {
         {
             for (int j = 0; j < numberOfRects; j++)
             {
-                translate(pointsX[i][j],pointsY[i][j]);
+                translate(pointX[i][j], pointY[i][j]);
                 rotate(frameCount/30f);
                 fill(255);
-                rect(-BLOCK*.5f,-BLOCK*.5f, BLOCK, BLOCK);
+                rect(-BLOCK*.5f,-BLOCK*.5f, BLOCK-BLOCK/4f, BLOCK-BLOCK/4F);
                 resetMatrix();
             }
         }
@@ -74,8 +74,8 @@ public class Main09 extends PApplet {
         {
             for (int j = 0; j < numberOfRects; j++)
             {
-                pointsX[i][j] = i*BLOCK;
-                pointsY[i][j] = j*BLOCK;
+                pointX[i][j] = i*BLOCK;
+                pointY[i][j] = j*BLOCK;
             }
         }
     }
@@ -86,8 +86,8 @@ public class Main09 extends PApplet {
         {
             for (int j = 0; j < numberOfRects; j++)
             {
-                float x =  pointsX[i][j];
-                float y =  pointsY[i][j];
+                float x =  pointX[i][j];
+                float y =  pointY[i][j];
 
                 if(fx) {
                     x-=5;
@@ -113,41 +113,9 @@ public class Main09 extends PApplet {
                         fy = true;
                 }
 
-                pointsX[i][j] = x;
-                pointsY[i][j] = y;
+                pointX[i][j] = x;
+                pointY[i][j] = y;
             }
         }
     }
-
-    public void animateRect()
-    {
-
-        translate(x1,y1);
-        rotate(angle);
-        fill(255);
-        rect(-50,-50,100,100);
-
-        if(fx) {
-            x1-=10;
-            if(x1<=MAX_EXTEND)
-                fx = false;
-        } else {
-            x1+=10;
-            if(x1>=width-MAX_EXTEND)
-                fx = true;
-        }
-
-        if(fy) {
-            y1-=10;
-            if(y1<=MAX_EXTEND)
-                fy = false;
-        } else {
-            y1+=10;
-            if(y1>=height-MAX_EXTEND)
-                fy = true;
-        }
-
-        angle+=dangle;
-    }
-
 }
