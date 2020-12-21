@@ -2,7 +2,7 @@ import processing.core.*;
 
 import javax.swing.*;
 
-public class Main extends PApplet {
+public class Main08 extends PApplet {
 
     private int starNumber = 4;
 
@@ -63,7 +63,7 @@ public class Main extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("Main");
+        PApplet.main("Main08");
     }
 
     public void drawStar(float x, float y, float r, float blue, float green, float red)

@@ -27,10 +27,10 @@ public class Main4 extends PApplet {
         x = (width*.5f-WIDTH*.5f)+BLOCK*.5f;
         y = 50f+BLOCK*.5f;
 
-        limX1 = width*.5f-WIDTH*.5f;
-        limX2 = width*.5f-WIDTH*.5f+(float)WIDTH;
-        limY1 = 50f;
-        limY2 = 50f+(float)WIDTH;
+        limX1 = width*.5f-WIDTH*.5f+BLOCK/2f;
+        limX2 = width*.5f-WIDTH*.5f+(float)WIDTH-BLOCK/2f;
+        limY1 = 50f+BLOCK/2f;
+        limY2 = 50f+(float)WIDTH-BLOCK/2f;
 
         dx = 0;
         dy = 0;
@@ -63,7 +63,7 @@ public class Main4 extends PApplet {
                 text = "You pressed button: UP";
                 dx = 0;
 
-                if(limY1+BLOCK/2f<y)
+                if(limY1<y)
                     dy = -BLOCK;
                 else
                     dy = 0;
@@ -72,7 +72,7 @@ public class Main4 extends PApplet {
                 text = "You pressed button: LEFT";
                 dy = 0;
 
-                if(x>limX1+BLOCK/2f)
+                if(x>limX1)
                     dx = -BLOCK;
                 else
                     dx = 0;
@@ -81,7 +81,7 @@ public class Main4 extends PApplet {
                 text = "You pressed button: RIGHT";
                 dy = 0;
 
-                if(x<limX2-BLOCK/2f)
+                if(x<limX2)
                     dx = BLOCK;
                 else
                     dx = 0;
@@ -89,7 +89,7 @@ public class Main4 extends PApplet {
             {
                 text = "You pressed button: DOWN";
                 dx = 0;
-                if(limY2-BLOCK/2f>y)
+                if(limY2>y)
                     dy = BLOCK;
                 else
                     dy = 0;

@@ -2,7 +2,7 @@ import processing.core.*;
 
 import javax.swing.*;
 
-public class Main extends PApplet {
+public class Main09 extends PApplet {
 
     private final int MAX_EXTEND = 100;
     private float x1,y1;
@@ -44,18 +44,19 @@ public class Main extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("Main");
+        PApplet.main("Main09");
     }
 
     public void animateRects()
     {
-        for (float i = 0; i < numberOfRects; i+=1.2f)
+        for (int i = 0; i < numberOfRects; i++) //1.2f)
         {
-            for (float j = 0; j < numberOfRects; j+=1.2f)
+            for (int j = 0; j < numberOfRects; j++) //1.2f)
             {
-                translate(i * BLOCK,j * BLOCK);
+                // translate(i * BLOCK,j * BLOCK);
                 fill(255);
                 rect(i * BLOCK, j * BLOCK, BLOCK, BLOCK);
+                // rect(-BLOCK/2f,-BLOCK/2f, 0, BLOCK, BLOCK);
             }
         }
     }
