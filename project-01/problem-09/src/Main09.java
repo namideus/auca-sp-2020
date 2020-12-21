@@ -38,79 +38,33 @@ public class Main09 extends PApplet {
         fill(0,0,0,60);
         rect(0,0,width-1,height-1);
 
-        for (int i = 1; i <= numberOfRects; i++) //1.2f)
-        {
-            for (int j = 1; j <= numberOfRects; j++) //1.2f)
-            {
-                translate(i * BLOCK,j * BLOCK);
-                rotate(frameCount/30f);
-                fill(255);
-                rect(-BLOCK*.5f,-BLOCK*.5f, BLOCK, BLOCK);
-                resetMatrix();
-            }
-        }
+        animateRects();
 
-       // animateRects();
-
-      //  animateRect();
+        // animateRect();
     }
 
     public static void main(String[] args) {
         PApplet.main("Main09");
     }
 
-     /* float r = 0;
-
-    void setup() {
-        size(400, 400);
-        background(255);
-        noStroke();
-        fill(0);
-        rectMode(CENTER);
-    }
-    void draw() {
-        background(255);
-
-        translate(100, 100);
-        rotate(r);
-        rect(0, 0, 80, 80);
-        resetMatrix();
-
-        translate(300, 100);
-        rotate(r);
-        rect(0, 0, 80, 80);
-        resetMatrix();
-
-        translate(100, 300);
-        rotate(r);
-        rect(0, 0, 80, 80);
-        resetMatrix();
-
-        translate(300, 300);
-        rotate(r);
-        rect(0, 0, 80, 80);
-        resetMatrix();
-
-        r = r + 0.02;
-    }*/
-
     public void animateRects()
     {
-        float r = 0;
-
-        for (int i = 0; i < numberOfRects; i++) //1.2f)
+        for (int i = 0; i < numberOfRects; i++)
         {
-            for (int j = 0; j < numberOfRects; j++) //1.2f)
+            for (int j = 0; j < numberOfRects; j++)
             {
                 translate(i * BLOCK,j * BLOCK);
-                rotate(r);
+                rotate(frameCount/20f);
                 fill(255);
-                rect(0,0, BLOCK, BLOCK);
+                rect(-BLOCK*.5f,-BLOCK*.5f, BLOCK, BLOCK);
                 resetMatrix();
             }
         }
+    }
 
-        r+=0.2;
+    public void updateXY()
+    {
+
     }
 
     public void animateRect()
