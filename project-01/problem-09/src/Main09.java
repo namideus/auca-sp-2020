@@ -11,7 +11,8 @@ public class Main09 extends PApplet {
     private int WIDTH = 300,HEIGHT = 300;
     private float dangle = .1f;
     private int numberOfRects;
-    private float pointsXY[][];
+    private float pointsX[][];
+    private float pointsY[][];
 
     public void settings() {
         fullScreen();
@@ -29,9 +30,12 @@ public class Main09 extends PApplet {
                         "Enter the number of rectangles in a row [2, 8]:"
                 ).trim());
 
-        pointsXY = new float[numberOfRects][2];
+        pointsX = new float[numberOfRects][numberOfRects];
+        pointsY = new float[numberOfRects][numberOfRects];
 
         BLOCK = (float)WIDTH/numberOfRects;
+
+        initXY();
     }
 
     public void draw() {
@@ -53,18 +57,66 @@ public class Main09 extends PApplet {
         {
             for (int j = 0; j < numberOfRects; j++)
             {
-                translate(i * BLOCK,j * BLOCK);
-                rotate(frameCount/20f);
+                translate(pointsX[i][j],pointsY[i][j]);
+                rotate(frameCount/30f);
                 fill(255);
                 rect(-BLOCK*.5f,-BLOCK*.5f, BLOCK, BLOCK);
                 resetMatrix();
+            }
+        }
+
+        updateXY();
+    }
+
+    public void initXY()
+    {
+        for (int i = 0; i < numberOfRects; i++)
+        {
+            for (int j = 0; j < numberOfRects; j++)
+            {
+                pointsX[i][j] = i*BLOCK;
+                pointsY[i][j] = j*BLOCK;
             }
         }
     }
 
     public void updateXY()
     {
+        for (int i = 0; i < numberOfRects; i++)
+        {
+            for (int j = 0; j < numberOfRects; j++)
+            {
+                float x =  pointsX[i][j];
+                float y =  pointsY[i][j];
 
+                if(fx) {
+                    x-=5;
+
+                    if(x<=BLOCK)
+                        fx = false;
+                } else {
+                    x+=5;
+
+                    if(x>=width-BLOCK)
+                        fx = true;
+                }
+
+                if(fy) {
+                    y-=5;
+
+                    if(y<=BLOCK)
+                        fy = false;
+                } else {
+                    y+=5;
+
+                    if(y>=height-BLOCK)
+                        fy = true;
+                }
+
+                pointsX[i][j] = x;
+                pointsY[i][j] = y;
+            }
+        }
     }
 
     public void animateRect()
