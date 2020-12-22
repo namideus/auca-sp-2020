@@ -4,111 +4,6 @@ import javax.swing.*;
 
 public class Main02 extends PApplet {
 
-    private int flakeNumber;
-    private float[] coordsX;
-    private float[] coordsY;
-    private Snowflake[] flakes;
-
-    public void settings() {
-        fullScreen();
-    }
-
-    public void setup() {
-        flakeNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of flakes:").trim());
-
-        flakes = new Snowflake[flakeNumber];
-        for(int i=0; i<flakeNumber; i++)
-            flakes[i] = new Snowflake();
-    }
-
-    public void draw() {
-        background(0, 0, 0);
-
-        for(int i=0; i<flakeNumber; i++) {
-            flakes[i].show();
-            flakes[i].rotate();
-            flakes[i].fall();
-        }
-    }
-
-    public void drawFlake(float x, float y, float r, float blue, float green, float red)
-    {
-        strokeWeight(3f);
-        stroke(red,green,blue);
-
-        float angle = TWO_PI/9;
-
-        for(float a = 0; a < TWO_PI; a+=angle)
-        {
-            float sx = x+cos(a)*r;
-            float sy = y+sin(a)*r;
-            line(x,y,sx,sy);
-        }
-    }
-
-    public static void main(String[] args) {
-        PApplet.main("Main02");
-    }
-
-    private class Snowflake {
-        float x = random(width);
-        float y = random(-200,-100);
-        float r = random(5,10);
-        float angle = random(0,360);
-        float yspeed = random(5,11);
-        float rspeed = random(1,4);
-
-        void fall() {
-                y += yspeed;
-
-                if (y > height)
-                    y = random(-200, -100);
-        }
-
-        void rotate()
-        {
-            angle += rspeed;
-        }
-
-        void show()
-        {
-            PShape s = createShape();
-            s.beginShape();
-            s.fill(255, 255, 255);
-            s.vertex(-25, -25);
-            s.vertex(0, 50);
-            s.vertex(50, 50);
-            s.vertex(50, 0);
-            //s.translate(25+x,25+y);
-            s.translate(x,y);
-            s.rotate(angle);
-            s.endShape(CLOSE);
-            shape(s,x,y);
-
-//            strokeWeight(4f);
-//            stroke(255,255,255);
-//
-//            float y1 = y-r;
-//            float y2 = y+r;
-//            line(x,y1,x,y2);
-//            line(x-30f,y1,x+30f,y2);
-//            line(x+30f,y1,x-30f,y2);
-//
-//            float x3 = x-r;
-//            float x4 = x+r;
-//            line(x3,y,x4,y);
-        }
-    }
-}
-
-
-/*
-import processing.core.*;
-
-        import javax.swing.*;
-
-public class Main03 extends PApplet {
-
     private int starNumber;
     private float[] coordsX;
     private float[] coordsY;
@@ -210,6 +105,60 @@ public class Main03 extends PApplet {
         strokeWeight(3f);
         stroke(red,green,blue);
 
+        float angle = TWO_PI/6;
+
+        for(float a = 0; a < TWO_PI; a+=angle)
+        {
+            float sx = x+cos(a)*r;
+            float sy = y+sin(a)*r;
+            line(x,y,sx,sy);
+        }
+    }
+
+    public static void main(String[] args) {
+        PApplet.main("Main02");
+    }
+}
+
+/*
+import processing.core.*;
+
+import javax.swing.*;
+
+public class Main02 extends PApplet {
+
+    private int flakeNumber;
+    private float[] coordsX;
+    private float[] coordsY;
+    private Snowflake[] flakes;
+
+    public void settings() {
+        fullScreen();
+    }
+
+    public void setup() {
+        flakeNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of flakes:").trim());
+
+        flakes = new Snowflake[flakeNumber];
+        for(int i=0; i<flakeNumber; i++)
+            flakes[i] = new Snowflake();
+    }
+
+    public void draw() {
+        background(0, 0, 0);
+
+        for(int i=0; i<flakeNumber; i++) {
+            flakes[i].show();
+            flakes[i].rotate();
+            flakes[i].fall();
+        }
+    }
+
+    public void drawFlake(float x, float y, float r, float blue, float green, float red)
+    {
+        strokeWeight(3f);
+        stroke(red,green,blue);
+
         float angle = TWO_PI/9;
 
         for(float a = 0; a < TWO_PI; a+=angle)
@@ -221,7 +170,58 @@ public class Main03 extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("Main03");
+        PApplet.main("Main02");
+    }
+
+    private class Snowflake {
+        float x = random(width);
+        float y = random(-200,-100);
+        float r = random(5,10);
+        float angle = random(0,360);
+        float yspeed = random(5,11);
+        float rspeed = random(1,4);
+
+        void fall() {
+                y += yspeed;
+
+                if (y > height)
+                    y = random(-200, -100);
+        }
+
+        void rotate()
+        {
+            angle += rspeed;
+        }
+
+        void show()
+        {
+            PShape s = createShape();
+            s.beginShape();
+            s.fill(255, 255, 255);
+            s.vertex(-25, -25);
+            s.vertex(0, 50);
+            s.vertex(50, 50);
+            s.vertex(50, 0);
+            //s.translate(25+x,25+y);
+            s.translate(x,y);
+            s.rotate(angle);
+            s.endShape(CLOSE);
+            shape(s,x,y);
+
+//            strokeWeight(4f);
+//            stroke(255,255,255);
+//
+//            float y1 = y-r;
+//            float y2 = y+r;
+//            line(x,y1,x,y2);
+//            line(x-30f,y1,x+30f,y2);
+//            line(x+30f,y1,x-30f,y2);
+//
+//            float x3 = x-r;
+//            float x4 = x+r;
+//            line(x3,y,x4,y);
+        }
     }
 }
 */
+
