@@ -7,11 +7,12 @@ public class Main01 extends PApplet {
     private int starNumber;
     private float[] coordsX;
     private float[] coordsY;
-    private float[] rad1;
-    private float[] rad2;
+    private float[] rad;
     private float[] red;
     private float[] green;
     private float[] blue;
+    private int[] spin;
+    private boolean[][] bounceXY;
 
 
     public void settings() {
@@ -19,41 +20,80 @@ public class Main01 extends PApplet {
     }
 
     public void setup() {
+        frameRate(30f);
+
         starNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of stars:").trim());
 
         coordsX = new float[starNumber];
         coordsY = new float[starNumber];
-        rad1 = new float[starNumber];
-        rad2 = new float[starNumber];
+        rad = new float[starNumber];
         red = new float[starNumber];
         green = new float[starNumber];
         blue = new float[starNumber];
+        spin = new int[starNumber];
+        bounceXY = new boolean[starNumber][2];
 
         for(int i=0; i<starNumber; i++)
         {
             coordsX[i] = random(10f,width-40f);
             coordsY[i] = random(10f,height-40f);
-            rad1[i] = random(10f);
-            rad2[i] = random(10f,40f);
+            rad[i] = random(10f,40f);
             red[i] = random(255);
             green[i] = random(255);
             blue[i] = random(255);
+            spin[i] = ((int)random(2,9)%2>0) ? 1 : -1;
+            bounceXY[i][0] = ((int)random(2,9)%2>0);
+            bounceXY[i][1] = ((int)random(2,9)%2>0);
         }
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        drawStar(width*.5f,height*.5f,50f,0,0,255);
-
         for(int i=0; i<starNumber; i++)
         {
             pushMatrix();
             translate(coordsX[i], coordsY[i]);
-            rotate(frameCount / 20f);
-            // star(0, 0, 10f, rad2[i], 9, red[i], green[i], blue[i]);
-            drawStar(0, 0, rad2[i], blue[i], green[i],red[i]);
+            rotate(spin[i]*frameCount / 20f);
+            drawStar(0, 0, rad[i], blue[i], green[i],red[i]);
             popMatrix();
+        }
+
+        updateXY();
+    }
+
+    public void updateXY()
+    {
+        for(int i=0; i<starNumber; i++)
+        {
+            float x = coordsX[i];
+            boolean fx = bounceXY[i][0];
+            float y = coordsY[i];
+            boolean fy = bounceXY[i][1];
+
+            if(fx) {
+                x-=5;
+                if(x<=rad[i])
+                    fx = false;
+            } else {
+                x+=5;
+                if(x>=width-rad[i])
+                    fx = true;
+            }
+
+            if(fy) {
+                y-=5;
+                if(y<=rad[i])
+                    fy = false;
+            } else {
+                y+=5;
+                if(y>=height-rad[i])
+                    fy = true;
+            }
+            coordsX[i] = x;
+            coordsY[i] = y;
+            bounceXY[i][0] = fx;
+            bounceXY[i][1] = fy;
         }
     }
 
@@ -63,9 +103,8 @@ public class Main01 extends PApplet {
         stroke(red,green,blue);
 
         float angle = TWO_PI/9;
-        float hAngle = angle*.5f;
-        fill(red,green,blue);
-
+        //float hAngle = angle*.5f;
+        //fill(red,green,blue);
         for(float a = 0; a < TWO_PI; a+=angle)
         {
             float sx = x+cos(a)*r;
@@ -78,23 +117,6 @@ public class Main01 extends PApplet {
         PApplet.main("Main01");
     }
 
-    /*  public void star(float x, float y, float r1, float r2, int n, float r,float g, float b)
-    {
-        float angle = TWO_PI/n;
-        float hAngle = angle*.5f;
-        beginShape();
-        fill(r,g,b);
-        for(float a = 0; a < TWO_PI; a+=angle)
-        {
-            float sx = x+cos(a)*r2;
-            float sy = y+sin(a)*r2;
-            vertex(sx,sy);
-            sx = x+cos(a+hAngle)*r1;
-            sy = y+sin(a+hAngle)*r1;
-            vertex(sx, sy);
-        }
-        endShape();
-    }*/
 /*    public void animateCircle3()
     {
         fill(0,255,255);
