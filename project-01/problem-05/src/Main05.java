@@ -4,18 +4,13 @@ import javax.swing.*;
 
 public class Main05 extends PApplet {
 
-    private float x,y,z, dx,dy,columns,rows;
     private int size;
     private String text;
-
-//    public void settings() {
-//        fullScreen();
-//    }
-
-    final int WIDTH = 1000;
-    final int HEIGHT = 1000;
-    private int BLOCKX;
-    private int BLOCKY;
+    private final int WIDTH = 1000;
+    private final int HEIGHT = 1000;
+    private int BLOCK;
+    private float[][] pointsX;
+    private float[][] pointsY;
 
     @Override
     public void settings() {
@@ -35,8 +30,10 @@ public class Main05 extends PApplet {
             exit();
         }
 
-        BLOCKX = WIDTH/size;
-        BLOCKY = HEIGHT/size;
+        pointsX = new float[size][size];
+        pointsY = new float[size][size];
+
+        BLOCK = WIDTH/size;
     }
 
     public void draw() {
@@ -49,20 +46,35 @@ public class Main05 extends PApplet {
 
         for (int i = 0; i < size; i ++) {
             for (int j = 0; j < size; j ++) {
+                float
+                        x = i * BLOCK+(width*.5f-WIDTH*.5f),
+                        y = j * BLOCK+(height*.5f-HEIGHT*.5f);
+
+                pointsX[i][j] = x;
+                pointsY[i][j] = y;
+
                 if ((i + j + 1) % 2 == 0) {
                     fill(255, 255, 255); // white
                 } else {
                     fill(0, 0, 0); // black
                 }
-                rect(i * BLOCKX+(width*.5f-WIDTH*.5f),
-                        j * BLOCKY+(height*.5f-HEIGHT*.5f), BLOCKX, BLOCKY);
-
-                stroke(255,0,0);
-                strokeWeight(4f);
-                rect(i * BLOCKX+(width*.5f-WIDTH*.5f),
-                        j * BLOCKY+(height*.5f-HEIGHT*.5f), BLOCKX, BLOCKY);
+                rect(x, y, BLOCK, BLOCK);
             }
         }
+
+//        for (int i = 0; i < size; i ++) {
+//            for (int j = 0; j < size; j++) {
+//                float x = pointsX[i][j];
+//                float y = pointsY[i][j];
+//
+//                if (mouseX > x && mouseX < x + BLOCK && mouseY > y && mouseY < y + BLOCK)
+//                {
+//                    stroke(255, 0, 0);
+//                    strokeWeight(4f);
+//                    rect(x, y, BLOCK, BLOCK);
+//                }
+//            }
+//        }
     }
 
     public static void main(String[] args) {
@@ -70,21 +82,3 @@ public class Main05 extends PApplet {
     }
 
 }
-
-  /*  void setup() {
-        size(800, 800);
-    }
-
-    void draw() {
-        background(255);
-        for (int x = 0; x < 8; x++) {
-            for (int y = 0; y < 8; y++) {
-                if ((x+y)%2 == 0) {
-                    fill(255);
-                } else {
-                    fill(0);
-                }
-                rect(x * 100, y * 100, 100, 100);
-            }
-        }
-    }*/
