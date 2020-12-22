@@ -57,7 +57,7 @@ public class Main01 extends PApplet {
         {
             pushMatrix();
             translate(coordsX[i], coordsY[i]);
-            rotate(spin[i]*frameCount / 30f);
+            rotate(spin[i]*frameCount / 5f);
             drawStar(0, 0, rad[i], blue[i], green[i],red[i]);
             popMatrix();
         }
