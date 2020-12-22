@@ -41,7 +41,7 @@ public class Main extends PApplet {
         float r = random(5,10);
         float angle = random(0,360);
         float yspeed = random(5,11);
-        float rspeed = random(3,6);
+        float rspeed = random(1,4);
 
         void fall() {
                 y += yspeed;
@@ -60,11 +60,12 @@ public class Main extends PApplet {
             PShape s = createShape();
             s.beginShape();
             s.fill(255, 255, 255);
-            s.vertex(0, 0);
+            s.vertex(-25, -25);
             s.vertex(0, 50);
             s.vertex(50, 50);
             s.vertex(50, 0);
-            s.translate(-25+x,-25+y);
+            //s.translate(25+x,25+y);
+            s.translate(x,y);
             s.rotate(angle);
             s.endShape(CLOSE);
             shape(s,x,y);

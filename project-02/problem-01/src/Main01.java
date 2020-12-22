@@ -2,7 +2,7 @@ import processing.core.*;
 
 import javax.swing.*;
 
-public class Main extends PApplet {
+public class Main01 extends PApplet {
 
     private int starNumber;
     private float[] coordsX;
@@ -37,6 +37,11 @@ public class Main extends PApplet {
         }
     }
 
+    public void star(float x, float y, float r, float r2, int n)
+    {
+
+    }
+
     public void drawStar(float x, float y, float r, float blue, float green, float red, float angle)
     {
         strokeWeight(4f);
@@ -56,7 +61,7 @@ public class Main extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("Main");
+        PApplet.main("Main01");
     }
 
 /*    public void animateCircle3()
