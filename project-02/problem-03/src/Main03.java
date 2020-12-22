@@ -31,13 +31,16 @@ public class Main03 extends PApplet {
         float x = width*.5f;
         float y = height*.5f;
 
+        float dc = (float)min(height, width)/circleNumber;
+
         for(int i=0; i<circleNumber; i++)
         {
             coordsX[i] = x;
             coordsY[i] = y;
+
             x-=EXTEND;
             y-=EXTEND;
-            //alpha[i] = 250f-i;
+            //alpha[i] = 5+i*dc;
         }
     }
 
@@ -46,7 +49,7 @@ public class Main03 extends PApplet {
 
         for(int i=0; i<circleNumber; i++)
         {
-            fill(0,0,255);
+            fill(0f,0f,255f);
             circle(coordsX[i], coordsY[i], EXTEND);
         }
 

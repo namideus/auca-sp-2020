@@ -5,6 +5,7 @@ import javax.swing.*;
 public class Main08 extends PApplet {
 
     private int starNumber = 4;
+    private float angle;
 
     public void settings() {
         fullScreen();
@@ -14,6 +15,7 @@ public class Main08 extends PApplet {
         frameRate(50f);
 
         starNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of stars [4,10]:").trim());
+        angle = TWO_PI/starNumber;
     }
 
     public void draw() {
@@ -25,41 +27,19 @@ public class Main08 extends PApplet {
         rotate(frameCount/30f);
         drawStar(0, 0, 200f, 0, 0, 255);
 
-        pushMatrix();
-        translate(width/6f, 0);
-        rotate(-frameCount/10f);
-        drawStar(0, 0, 50f, 255, 0, 0);
-        popMatrix();
-
-        pushMatrix();
-        translate(-width/6f, 0);
-        rotate(-frameCount/10f);
-        drawStar(0, 0, 50f, 255, 0, 0);
-        popMatrix();
-
-        pushMatrix();
-        translate(0 , height/3.5f);
-        rotate(-frameCount/10f);
-        drawStar(0, 0, 50f, 255, 0, 0);
-        popMatrix();
-
-        pushMatrix();
-        translate(0 , -height/3.5f);
-        rotate(-frameCount/10f);
-        drawStar(0, 0, 50f, 255, 0, 0);
-        popMatrix();
-
-       /* for(int i=0; i<starNumber; i++)
+        for(float a = 0; a < TWO_PI; a+=angle)
         {
+            float sx = cos(a)*400;
+            float sy = sin(a)*400;
+
             pushMatrix();
-            translate(width/6f, 0); //
+            translate(sx, sy);
             rotate(-frameCount/10f);
             drawStar(0, 0, 50f, 255, 0, 0);
             popMatrix();
-        }*/
+        }
 
         popMatrix();
-
     }
 
     public static void main(String[] args) {

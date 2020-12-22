@@ -20,8 +20,8 @@ public class Main5 extends PApplet {
     @Override
     public void settings() {
         super.settings();
-        // fullScreen();
-        size(WIDTH, HEIGHT);
+        fullScreen();
+        //size(WIDTH, HEIGHT);
     }
 
     public void setup() {
@@ -42,7 +42,8 @@ public class Main5 extends PApplet {
                 } else {
                     fill(0, 0, 0); // black
                 }
-                rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
+                rect(i * BLOCKX+(width*.5f-WIDTH*.5f),
+                        j * BLOCKY+(height*.5f-HEIGHT*.5f), BLOCKX, BLOCKY);
             }
         }
     }
