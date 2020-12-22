@@ -31,10 +31,10 @@ public class Main01 extends PApplet {
 
         for(int i=0; i<starNumber; i++)
         {
-            coordsX[i] = random(10f,width);
-            coordsY[i] = random(10f,height);
+            coordsX[i] = random(10f,width-40f);
+            coordsY[i] = random(10f,height-40f);
             rad1[i] = random(10f);
-            rad2[i] = random(50f);
+            rad2[i] = random(10f,40f);
             red[i] = random(255);
             green[i] = random(255);
             blue[i] = random(255);
@@ -44,18 +44,41 @@ public class Main01 extends PApplet {
     public void draw() {
         background(0, 0, 0);
 
+        drawStar(width*.5f,height*.5f,50f,0,0,255);
+
         for(int i=0; i<starNumber; i++)
         {
             pushMatrix();
             translate(coordsX[i], coordsY[i]);
             rotate(frameCount / 20f);
             // star(0, 0, 10f, rad2[i], 9, red[i], green[i], blue[i]);
-            drawStar(0, 0, rad2[i], blue[i], green[i],red[i],0);
+            drawStar(0, 0, rad2[i], blue[i], green[i],red[i]);
             popMatrix();
         }
     }
 
-    public void star(float x, float y, float r1, float r2, int n, float r,float g, float b)
+    public void drawStar(float x, float y, float r, float blue, float green, float red)
+    {
+        strokeWeight(3f);
+        stroke(red,green,blue);
+
+        float angle = TWO_PI/9;
+        float hAngle = angle*.5f;
+        fill(red,green,blue);
+
+        for(float a = 0; a < TWO_PI; a+=angle)
+        {
+            float sx = x+cos(a)*r;
+            float sy = y+sin(a)*r;
+            line(x,y,sx,sy);
+        }
+    }
+
+    public static void main(String[] args) {
+        PApplet.main("Main01");
+    }
+
+    /*  public void star(float x, float y, float r1, float r2, int n, float r,float g, float b)
     {
         float angle = TWO_PI/n;
         float hAngle = angle*.5f;
@@ -71,30 +94,7 @@ public class Main01 extends PApplet {
             vertex(sx, sy);
         }
         endShape();
-    }
-
-    public void drawStar(float x, float y, float r, float blue, float green, float red, float angle)
-    {
-        strokeWeight(4f);
-        stroke(red,green,blue);
-
-        float y1 = y-r;
-        float y2 = y+r;
-        line(x,y1,x,y2);
-        line(x-30f,y1,x+30f,y2);
-        line(x+30f,y1,x-30f,y2);
-
-        float x3 = x-r;
-        float x4 = x+r;
-        line(x3,y,x4,y);
-        line(x3,y-30f,x4,y+30f);
-        line(x3,y+30f,x4,y-30f);
-    }
-
-    public static void main(String[] args) {
-        PApplet.main("Main01");
-    }
-
+    }*/
 /*    public void animateCircle3()
     {
         fill(0,255,255);
