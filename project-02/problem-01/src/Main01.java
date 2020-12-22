@@ -29,17 +29,34 @@ public class Main01 extends PApplet {
     public void draw() {
         background(0, 0, 0);
 
-        for(int i=0; i<starNumber; i++)
-        {
-            drawStar(coordsX[i], coordsY[i],
-                    random(30),random(255), random(255),random(255),
-                    random(30f));
-        }
+        pushMatrix();
+        translate(width*.5f,height*.5f);
+        rotate(frameCount/200f);
+        star(0,0,10,100,6);
+        popMatrix();
+//        for(int i=0; i<starNumber; i++)
+//        {
+//            drawStar(coordsX[i], coordsY[i],
+//                    random(30),random(255), random(255),random(255),
+//                    random(30f));
+//        }
     }
 
-    public void star(float x, float y, float r, float r2, int n)
+    public void star(float x, float y, float r1, float r2, int n)
     {
-
+        float angle = TWO_PI/n;
+        float hAngle = angle*.5f;
+        beginShape();
+        for(float a = 0; a < TWO_PI; a+=angle)
+        {
+            float sx = x+cos(a)*r2;
+            float sy = y+sin(a)*r2;
+            vertex(sx,sy);
+            sx = x+cos(a+hAngle)*r1;
+            sy = y+sin(a+hAngle)*r1;
+            vertex(sx, sy);
+        }
+        endShape();
     }
 
     public void drawStar(float x, float y, float r, float blue, float green, float red, float angle)
