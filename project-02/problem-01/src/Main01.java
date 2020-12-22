@@ -7,10 +7,15 @@ public class Main01 extends PApplet {
     private int starNumber;
     private float[] coordsX;
     private float[] coordsY;
+    private float[] rad1;
+    private float[] rad2;
+    private float[] red;
+    private float[] green;
+    private float[] blue;
+
 
     public void settings() {
         fullScreen();
-        noLoop();
     }
 
     public void setup() {
@@ -18,35 +23,44 @@ public class Main01 extends PApplet {
 
         coordsX = new float[starNumber];
         coordsY = new float[starNumber];
+        rad1 = new float[starNumber];
+        rad2 = new float[starNumber];
+        red = new float[starNumber];
+        green = new float[starNumber];
+        blue = new float[starNumber];
 
         for(int i=0; i<starNumber; i++)
         {
-            coordsX[i] = random(width);
-            coordsY[i] = random(height);
+            coordsX[i] = random(10f,width);
+            coordsY[i] = random(10f,height);
+            rad1[i] = random(10f);
+            rad2[i] = random(50f);
+            red[i] = random(255);
+            green[i] = random(255);
+            blue[i] = random(255);
         }
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        pushMatrix();
-        translate(width*.5f,height*.5f);
-        rotate(frameCount/200f);
-        star(0,0,10,100,6);
-        popMatrix();
-//        for(int i=0; i<starNumber; i++)
-//        {
-//            drawStar(coordsX[i], coordsY[i],
-//                    random(30),random(255), random(255),random(255),
-//                    random(30f));
-//        }
+        for(int i=0; i<starNumber; i++)
+        {
+            pushMatrix();
+            translate(coordsX[i], coordsY[i]);
+            rotate(frameCount / 20f);
+            // star(0, 0, 10f, rad2[i], 9, red[i], green[i], blue[i]);
+            drawStar(0, 0, rad2[i], blue[i], green[i],red[i],0);
+            popMatrix();
+        }
     }
 
-    public void star(float x, float y, float r1, float r2, int n)
+    public void star(float x, float y, float r1, float r2, int n, float r,float g, float b)
     {
         float angle = TWO_PI/n;
         float hAngle = angle*.5f;
         beginShape();
+        fill(r,g,b);
         for(float a = 0; a < TWO_PI; a+=angle)
         {
             float sx = x+cos(a)*r2;
