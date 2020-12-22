@@ -8,7 +8,7 @@ public class Main03 extends PApplet {
     private float[] coordsX;
     private float[] coordsY;
     private float[] alpha;
-    private float speed = 5f;
+    private float speed = 10f;
     private float EXTEND = 40f;
     private boolean[][] bounceXY;
 
@@ -27,11 +27,17 @@ public class Main03 extends PApplet {
         alpha = new float[circleNumber];
         bounceXY = new boolean[circleNumber][2];
 
+
+        float x = width*.5f;
+        float y = height*.5f;
+
         for(int i=0; i<circleNumber; i++)
         {
-            coordsX[i] = random(10f,width-40f);
-            coordsY[i] = random(10f,height-40f);
-            alpha[i] = 250f-i;
+            coordsX[i] = x;
+            coordsY[i] = y;
+            x-=EXTEND;
+            y-=EXTEND;
+            //alpha[i] = 250f-i;
         }
     }
 
@@ -40,7 +46,7 @@ public class Main03 extends PApplet {
 
         for(int i=0; i<circleNumber; i++)
         {
-            fill(0,0,255, alpha[i]);
+            fill(0,0,255);
             circle(coordsX[i], coordsY[i], EXTEND);
         }
 
@@ -79,21 +85,6 @@ public class Main03 extends PApplet {
             coordsY[i] = y;
             bounceXY[i][0] = fx;
             bounceXY[i][1] = fy;
-        }
-    }
-
-    public void drawStar(float x, float y, float r, float blue, float green, float red)
-    {
-        strokeWeight(3f);
-        stroke(red,green,blue);
-
-        float angle = TWO_PI/9;
-
-        for(float a = 0; a < TWO_PI; a+=angle)
-        {
-            float sx = x+cos(a)*r;
-            float sy = y+sin(a)*r;
-            line(x,y,sx,sy);
         }
     }
 
