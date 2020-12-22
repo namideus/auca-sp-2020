@@ -57,10 +57,12 @@ public class Main02 extends PApplet {
             pushMatrix();
             translate(coordsX[i], coordsY[i]);
             rotate(spin[i]*frameCount / spinSpeed[i]);
+
             if(rad[i]<=13f)
-                drawStar(0, 0, rad[i], 128, 128,128);
+                drawFlake(0, 0, rad[i], 128, 128,128);
             else
-                drawStar(0, 0, rad[i], 255, 255,255);
+                drawFlake(0, 0, rad[i], 255, 255,255);
+
             popMatrix();
         }
 
@@ -72,14 +74,14 @@ public class Main02 extends PApplet {
         for(int i=0; i<flakesNumber; i++)
         {
             coordsY[i] += speedY[i];
-            coordsX[i] += random(-2,2);
+            coordsX[i] += random(-3,3);
 
             if (coordsY[i] > height)
                 coordsY[i] = random(-200, -100);
         }
     }
 
-    public void drawStar(float x, float y, float r, float blue, float green, float red)
+    public void drawFlake(float x, float y, float r, float blue, float green, float red)
     {
         strokeWeight(3f);
         stroke(red,green,blue);
