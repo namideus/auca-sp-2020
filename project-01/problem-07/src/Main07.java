@@ -1,6 +1,6 @@
 import processing.core.*;
 
-public class Main7 extends PApplet {
+public class Main07 extends PApplet {
 
     // Earth data
     float earthAngle = PI/8;

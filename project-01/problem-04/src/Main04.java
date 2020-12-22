@@ -4,7 +4,7 @@ import processing.event.KeyEvent;
 import javax.swing.*;
 import java.awt.*;
 
-public class Main4 extends PApplet {
+public class Main04 extends PApplet {
 
     private float x,y,dx,dy,limX1,limX2,limY1,limY2;
     private int BLOCK, size;
@@ -19,6 +19,15 @@ public class Main4 extends PApplet {
         frameRate(20f);
 
         size = Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
+
+        if(size<10 || size>40) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Wrong size of the field entered!",
+                    "Error",
+                    JOptionPane.INFORMATION_MESSAGE);
+            exit();
+        }
 
         BLOCK = WIDTH/size;
 

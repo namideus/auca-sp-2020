@@ -1,6 +1,6 @@
 import processing.core.*;
 
-public class Main2 extends PApplet {
+public class Main06 extends PApplet {
 
     private float circleX, circleY, rectX1, rectY1, rectX2, rectY2;
     private final float RECT_WIDTH = 350f;

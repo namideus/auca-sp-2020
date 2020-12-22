@@ -2,7 +2,7 @@ import processing.core.*;
 
 import javax.swing.*;
 
-public class Main5 extends PApplet {
+public class Main05 extends PApplet {
 
     private float x,y,z, dx,dy,columns,rows;
     private int size;
@@ -26,6 +26,16 @@ public class Main5 extends PApplet {
 
     public void setup() {
         size = Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
+
+        if(size<10 || size>40) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Wrong size of the field entered!",
+                    "Error",
+                    JOptionPane.INFORMATION_MESSAGE);
+            exit();
+        }
+
         BLOCKX = WIDTH/size;
         BLOCKY = HEIGHT/size;
     }

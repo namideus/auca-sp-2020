@@ -4,7 +4,6 @@ import javax.swing.*;
 
 public class Main08 extends PApplet {
 
-    private int starNumber = 4;
     private float angle;
 
     public void settings() {
@@ -14,8 +13,18 @@ public class Main08 extends PApplet {
     public void setup() {
         frameRate(50f);
 
-        starNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of stars [4,10]:").trim());
-        angle = TWO_PI/starNumber;
+        int starNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of stars [4,10]:").trim());
+
+        if(starNumber<4 || starNumber>10) {
+            JOptionPane.showMessageDialog(
+                    null,
+                            "Wrong number of stars entered!",
+                            "Error",
+                            JOptionPane.INFORMATION_MESSAGE);
+            exit();
+        }
+
+        angle = TWO_PI/ starNumber;
     }
 
     public void draw() {

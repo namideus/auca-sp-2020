@@ -9,11 +9,9 @@ public class Main09 extends PApplet {
     private boolean fx,fy;
     private float angle = 0,BLOCK;
     private int WIDTH = 300,HEIGHT = 300;
-    private float dangle = .1f;
     private int numberOfRects;
     private float pointX[][];
     private float pointY[][];
-    private float pointsXY[][];
 
 
     public void settings() {
@@ -31,6 +29,15 @@ public class Main09 extends PApplet {
                 JOptionPane.showInputDialog(
                         "Enter the number of rectangles in a row [2, 8]:"
                 ).trim());
+
+        if(numberOfRects<2 || numberOfRects>8) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Wrong number of rectangles entered!",
+                    "Error",
+                    JOptionPane.INFORMATION_MESSAGE);
+            exit();
+        }
 
         pointX = new float[numberOfRects][numberOfRects];
         pointY = new float[numberOfRects][numberOfRects];
