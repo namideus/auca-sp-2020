@@ -12,8 +12,8 @@ public class Main05 extends PApplet {
 //        fullScreen();
 //    }
 
-    final int WIDTH = 600;
-    final int HEIGHT = 600;
+    final int WIDTH = 1000;
+    final int HEIGHT = 1000;
     private int BLOCKX;
     private int BLOCKY;
 
@@ -21,16 +21,15 @@ public class Main05 extends PApplet {
     public void settings() {
         super.settings();
         fullScreen();
-        //size(WIDTH, HEIGHT);
     }
 
     public void setup() {
-        size = Integer.parseInt(JOptionPane.showInputDialog("Enter the field's size [10,40]:").trim());
+        size = Integer.parseInt(JOptionPane.showInputDialog("Enter the board's size [4,12]:").trim());
 
-        if(size<10 || size>40) {
+        if(size<4 || size>12) {
             JOptionPane.showMessageDialog(
                     null,
-                    "Wrong size of the field entered!",
+                    "Wrong size of the board entered!",
                     "Error",
                     JOptionPane.INFORMATION_MESSAGE);
             exit();
@@ -41,9 +40,12 @@ public class Main05 extends PApplet {
     }
 
     public void draw() {
-        // rectMode(CENTER);
-        fill(0, 0, 0,100);
-        rect(0,0,width-1,height-1);
+        background(0, 0, 0);
+
+        textAlign(CENTER);
+        fill(255);
+        textSize(40f);
+        text("Row: 0; Column: 0; Color: White", width*.5f, 35f);
 
         for (int i = 0; i < size; i ++) {
             for (int j = 0; j < size; j ++) {
@@ -54,12 +56,17 @@ public class Main05 extends PApplet {
                 }
                 rect(i * BLOCKX+(width*.5f-WIDTH*.5f),
                         j * BLOCKY+(height*.5f-HEIGHT*.5f), BLOCKX, BLOCKY);
+
+                stroke(255,0,0);
+                strokeWeight(4f);
+                rect(i * BLOCKX+(width*.5f-WIDTH*.5f),
+                        j * BLOCKY+(height*.5f-HEIGHT*.5f), BLOCKX, BLOCKY);
             }
         }
     }
 
     public static void main(String[] args) {
-        PApplet.main("Main5");
+        PApplet.main("Main05");
     }
 
 }
