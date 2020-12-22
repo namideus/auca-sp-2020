@@ -12,6 +12,7 @@ public class Main01 extends PApplet {
     private float[] green;
     private float[] blue;
     private int[] spin;
+    private float[] speed;
     private boolean[][] bounceXY;
 
 
@@ -20,7 +21,7 @@ public class Main01 extends PApplet {
     }
 
     public void setup() {
-        frameRate(30f);
+        frameRate(25f);
 
         starNumber = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of stars:").trim());
 
@@ -31,6 +32,7 @@ public class Main01 extends PApplet {
         green = new float[starNumber];
         blue = new float[starNumber];
         spin = new int[starNumber];
+        speed = new float[starNumber];
         bounceXY = new boolean[starNumber][2];
 
         for(int i=0; i<starNumber; i++)
@@ -42,8 +44,9 @@ public class Main01 extends PApplet {
             green[i] = random(255);
             blue[i] = random(255);
             spin[i] = ((int)random(2,9)%2>0) ? 1 : -1;
-            bounceXY[i][0] = ((int)random(2,9)%2>0);
-            bounceXY[i][1] = ((int)random(2,9)%2>0);
+            speed[i] = random(3,6);
+            bounceXY[i][0] = ((int)random(1,8)%2>0);
+            bounceXY[i][1] = ((int)random(1,8)%2>0);
         }
     }
 
@@ -54,7 +57,7 @@ public class Main01 extends PApplet {
         {
             pushMatrix();
             translate(coordsX[i], coordsY[i]);
-            rotate(spin[i]*frameCount / 20f);
+            rotate(spin[i]*frameCount / 30f);
             drawStar(0, 0, rad[i], blue[i], green[i],red[i]);
             popMatrix();
         }
@@ -72,21 +75,21 @@ public class Main01 extends PApplet {
             boolean fy = bounceXY[i][1];
 
             if(fx) {
-                x-=5;
+                x-=speed[i];
                 if(x<=rad[i])
                     fx = false;
             } else {
-                x+=5;
+                x+=speed[i];
                 if(x>=width-rad[i])
                     fx = true;
             }
 
             if(fy) {
-                y-=5;
+                y-=speed[i];
                 if(y<=rad[i])
                     fy = false;
             } else {
-                y+=5;
+                y+=speed[i];
                 if(y>=height-rad[i])
                     fy = true;
             }
@@ -103,8 +106,7 @@ public class Main01 extends PApplet {
         stroke(red,green,blue);
 
         float angle = TWO_PI/9;
-        //float hAngle = angle*.5f;
-        //fill(red,green,blue);
+
         for(float a = 0; a < TWO_PI; a+=angle)
         {
             float sx = x+cos(a)*r;
@@ -116,30 +118,4 @@ public class Main01 extends PApplet {
     public static void main(String[] args) {
         PApplet.main("Main01");
     }
-
-/*    public void animateCircle3()
-    {
-        fill(0,255,255);
-        ellipse(x3,y3, MAX_R, MAX_R);
-
-        if(fx3) {
-            x3-=10;
-            if(x3<=MAX_R)
-                fx3 = false;
-        } else {
-            x3+=10;
-            if(x3>=width-MAX_R)
-                fx3 = true;
-        }
-
-        if(fy3) {
-            y3-=10;
-            if(y3<=MAX_R)
-                fy3 = false;
-        } else {
-            y3+=10;
-            if(y3>=height-MAX_R)
-                fy3 = true;
-        }
-    }*/
 }
