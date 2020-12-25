@@ -7,7 +7,7 @@ public class Main03 extends PApplet {
     private int N;
     private float[] coordsX;
     private float[] coordsY;
-    private float speed = 10f;
+    private float speed = 5f;
     private float EXTEND = 30f;
     private boolean[][] bounceXY;
 
@@ -17,7 +17,7 @@ public class Main03 extends PApplet {
     }
 
     public void setup() {
-        frameRate(25f);
+        frameRate(50f);
 
         N = Integer.parseInt(JOptionPane.showInputDialog("N?").trim());
 
