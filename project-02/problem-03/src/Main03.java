@@ -4,10 +4,9 @@ import javax.swing.*;
 
 public class Main03 extends PApplet {
 
-    private int circleNumber;
+    private int N;
     private float[] coordsX;
     private float[] coordsY;
-    private float[] alpha;
     private float speed = 10f;
     private float EXTEND = 30f;
     private boolean[][] bounceXY;
@@ -20,9 +19,7 @@ public class Main03 extends PApplet {
     public void setup() {
         frameRate(25f);
 
-        circleNumber = Integer.parseInt(JOptionPane.showInputDialog("N?").trim());
-
-
+        N = Integer.parseInt(JOptionPane.showInputDialog("N?").trim());
 
 //        if(size<10 || size>40) {
 //            JOptionPane.showMessageDialog(
@@ -33,37 +30,31 @@ public class Main03 extends PApplet {
 //            exit();
 //        }
 
-        coordsX = new float[circleNumber];
-        coordsY = new float[circleNumber];
-        alpha = new float[circleNumber];
-        bounceXY = new boolean[circleNumber][2];
-
+        coordsX = new float[N];
+        coordsY = new float[N];
+        bounceXY = new boolean[N][2];
 
         float x = width*.5f;
         float y = height*.5f;
-        float alfa = 0;
 
-        float d = 100f/circleNumber;
-
-        for(int i=0; i<circleNumber; i++)
+        for(int i=0; i<N; i++)
         {
             coordsX[i] = x;
             coordsY[i] = y;
 
             x += EXTEND;
             y += EXTEND;
-
-            alpha[i] = alfa;
-            alfa += d;
         }
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        for(int i=0; i<circleNumber; i++)
+        float dc = 250f/N;
+
+        for(int i=0; i<N; i++)
         {
-            fill(0f,0f,255f, alpha[i]);
+            fill(0f,0f,5+i*dc);
             ellipse(coordsX[i], coordsY[i], EXTEND+13f, EXTEND+13f);
         }
 
@@ -72,7 +63,7 @@ public class Main03 extends PApplet {
 
     public void updateXY()
     {
-        for(int i=0; i<circleNumber; i++)
+        for(int i=0; i<N; i++)
         {
             float x = coordsX[i];
             boolean fx = bounceXY[i][0];
