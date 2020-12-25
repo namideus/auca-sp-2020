@@ -37,21 +37,23 @@ public class Main03 extends PApplet {
         bounceXY = new boolean[circleNumber][2];
 
 
-        float x = 0; // EXTEND*.5f;
-        float y = 0; // EXTEND*.5f;
+        float x = EXTEND*.5f;
+        float y = EXTEND*.5f;
         float alfa = 0;
 
-        float dc = 100f/circleNumber;
+        float d = 100f/circleNumber;
 
         for(int i=0; i<circleNumber; i++)
         {
+            x += EXTEND;
+            y += EXTEND/2f;
+
             coordsX[i] = x;
             coordsY[i] = y;
 
-            x+=EXTEND*(i+1);
-            y+=EXTEND*(i+1);
             alpha[i] = alfa;
-            alfa += dc;
+
+            alfa += d;
         }
     }
 
@@ -60,7 +62,7 @@ public class Main03 extends PApplet {
 
         for(int i=0; i<circleNumber; i++)
         {
-            fill(0f,0f,255f,alpha[i]);
+            fill(0f,0f,255f); //,alpha[i]);
             ellipse(coordsX[i], coordsY[i], EXTEND, EXTEND);
         }
 
@@ -77,24 +79,29 @@ public class Main03 extends PApplet {
             boolean fy = bounceXY[i][1];
 
             if(fx) {
-                x-=speed;
+                x-=5f;
+
                 if(x<=EXTEND)
                     fx = false;
             } else {
-                x+=speed;
+                x+=5f;
+
                 if(x>=width-EXTEND)
                     fx = true;
             }
 
             if(fy) {
                 y-=speed;
+
                 if(y<=EXTEND)
                     fy = false;
             } else {
                 y+=speed;
+
                 if(y>=height-EXTEND)
                     fy = true;
             }
+
             coordsX[i] = x;
             coordsY[i] = y;
             bounceXY[i][0] = fx;
