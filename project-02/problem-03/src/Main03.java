@@ -9,7 +9,7 @@ public class Main03 extends PApplet {
     private float[] coordsY;
     private float[] alpha;
     private float speed = 10f;
-    private float EXTEND = 40f;
+    private float EXTEND = 30f;
     private boolean[][] bounceXY;
 
 
@@ -21,6 +21,8 @@ public class Main03 extends PApplet {
         frameRate(25f);
 
         circleNumber = Integer.parseInt(JOptionPane.showInputDialog("N?").trim());
+
+
 
 //        if(size<10 || size>40) {
 //            JOptionPane.showMessageDialog(
@@ -37,22 +39,21 @@ public class Main03 extends PApplet {
         bounceXY = new boolean[circleNumber][2];
 
 
-        float x = EXTEND*.5f;
-        float y = EXTEND*.5f;
+        float x = width*.5f;
+        float y = height*.5f;
         float alfa = 0;
 
         float d = 100f/circleNumber;
 
         for(int i=0; i<circleNumber; i++)
         {
-            x += EXTEND;
-            y += EXTEND/2f;
-
             coordsX[i] = x;
             coordsY[i] = y;
 
-            alpha[i] = alfa;
+            x += EXTEND;
+            y += EXTEND;
 
+            alpha[i] = alfa;
             alfa += d;
         }
     }
@@ -62,8 +63,8 @@ public class Main03 extends PApplet {
 
         for(int i=0; i<circleNumber; i++)
         {
-            fill(0f,0f,255f); //,alpha[i]);
-            ellipse(coordsX[i], coordsY[i], EXTEND, EXTEND);
+            fill(0f,0f,255f, alpha[i]);
+            ellipse(coordsX[i], coordsY[i], EXTEND+13f, EXTEND+13f);
         }
 
         updateXY();
@@ -79,12 +80,12 @@ public class Main03 extends PApplet {
             boolean fy = bounceXY[i][1];
 
             if(fx) {
-                x-=5f;
+                x-=speed;
 
                 if(x<=EXTEND)
                     fx = false;
             } else {
-                x+=5f;
+                x+=speed;
 
                 if(x>=width-EXTEND)
                     fx = true;
