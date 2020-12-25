@@ -52,9 +52,10 @@
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem08.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem09.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem10.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project-01/problem-08/src/Main08.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-08/src/Main08.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project-01/problem-05/src/Main05.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-05/src/Main05.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem-02/src/Main02.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-02/src/Main02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem-01/src/Main01.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-01/src/Main01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem-03/src/Main03.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-03/src/Main03.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Main02">
+  <component name="RunManager" selected="Application.Main03">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="project-02" />
@@ -129,9 +130,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main03" />
         <item itemvalue="Application.Main02" />
         <item itemvalue="Application.Main01" />
-        <item itemvalue="Application.Main03" />
       </list>
     </recent_temporary>
   </component>

@@ -22,25 +22,36 @@ public class Main03 extends PApplet {
 
         circleNumber = Integer.parseInt(JOptionPane.showInputDialog("N?").trim());
 
+//        if(size<10 || size>40) {
+//            JOptionPane.showMessageDialog(
+//                    null,
+//                    "Wrong size of the field entered!",
+//                    "Error",
+//                    JOptionPane.INFORMATION_MESSAGE);
+//            exit();
+//        }
+
         coordsX = new float[circleNumber];
         coordsY = new float[circleNumber];
         alpha = new float[circleNumber];
         bounceXY = new boolean[circleNumber][2];
 
 
-        float x = width*.5f;
-        float y = height*.5f;
+        float x = 0; // EXTEND*.5f;
+        float y = 0; // EXTEND*.5f;
+        float alfa = 0;
 
-        float dc = (float)min(height, width)/circleNumber;
+        float dc = 100f/circleNumber;
 
         for(int i=0; i<circleNumber; i++)
         {
             coordsX[i] = x;
             coordsY[i] = y;
 
-            x-=EXTEND;
-            y-=EXTEND;
-            //alpha[i] = 5+i*dc;
+            x+=EXTEND*(i+1);
+            y+=EXTEND*(i+1);
+            alpha[i] = alfa;
+            alfa += dc;
         }
     }
 
@@ -49,8 +60,8 @@ public class Main03 extends PApplet {
 
         for(int i=0; i<circleNumber; i++)
         {
-            fill(0f,0f,255f);
-            circle(coordsX[i], coordsY[i], EXTEND);
+            fill(0f,0f,255f,alpha[i]);
+            ellipse(coordsX[i], coordsY[i], EXTEND, EXTEND);
         }
 
         updateXY();

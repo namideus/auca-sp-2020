@@ -93,6 +93,8 @@ public class Main01 extends PApplet {
                 if(y>=height-rad[i])
                     fy = true;
             }
+
+
             coordsX[i] = x;
             coordsY[i] = y;
             bounceXY[i][0] = fx;
