@@ -7,8 +7,8 @@ public class Main03 extends PApplet {
     private int N;
     private float[] coordsX;
     private float[] coordsY;
-    private float speed = 5f;
-    private float EXTEND = 30f;
+    private final float speed = 5f;
+    private final float EXTEND = 30f;
     private boolean[][] bounceXY;
 
 
@@ -21,10 +21,10 @@ public class Main03 extends PApplet {
 
         N = Integer.parseInt(JOptionPane.showInputDialog("N?").trim());
 
-//        if(size<10 || size>40) {
+//        if(N<10 || N>35) {
 //            JOptionPane.showMessageDialog(
 //                    null,
-//                    "Wrong size of the field entered!",
+//                    "Wrong size of balls!",
 //                    "Error",
 //                    JOptionPane.INFORMATION_MESSAGE);
 //            exit();
@@ -34,8 +34,8 @@ public class Main03 extends PApplet {
         coordsY = new float[N];
         bounceXY = new boolean[N][2];
 
-        float x = width*.5f;
-        float y = height*.5f;
+        float x = EXTEND*.5f;
+        float y = EXTEND*.5f;
 
         for(int i=0; i<N; i++)
         {
@@ -44,17 +44,29 @@ public class Main03 extends PApplet {
 
             x += EXTEND;
             y += EXTEND;
+
+//            if(x>=width-EXTEND) {
+//                bounceXY[i][0] = true;
+//            } else {
+//                x += EXTEND;
+//            }
+//
+//            if(y>=height-EXTEND) {
+//                bounceXY[i][1] = true;
+//            } else {
+//                y += EXTEND;
+//            }
         }
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        float dc = 250f/N;
+        float dc = 230f/N;
 
         for(int i=0; i<N; i++)
         {
-            fill(0f,0f,5+i*dc);
+            fill(0f, 0f,25f+i*dc);
             ellipse(coordsX[i], coordsY[i], EXTEND+13f, EXTEND+13f);
         }
 

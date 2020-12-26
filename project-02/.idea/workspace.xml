@@ -53,6 +53,8 @@
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem09.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem10.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../project-01/problem-05/src/Main05.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-05/src/Main05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem-03/src/Main03.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-03/src/Main03.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,5 +157,21 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/problem-03/src/Main03.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/problem-03/src/Main03.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
