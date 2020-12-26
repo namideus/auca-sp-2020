@@ -48,11 +48,18 @@ public class Main04 extends PApplet {
         for(int i=0; i<N; i++) {
 
             float dc = 230f/length;
-            float x = random(width);
-            float y = random(height);
+            float x = random(0, width);
+            float y = random(0, height);
+            float angle = random(0,TWO_PI);
             int rand = (int)random(255);
 
-            for (int j = 0; j < length; j++)
+            coordsX[i][0] = x;
+            coordsY[i][0] = y;
+
+            x = x + cos(angle)*EXTEND;
+            y = y + sin(angle)*EXTEND;
+
+            for (int j = 1; j < length; j++)
             {
                 if(rand%2==0) {
                     green[i][j] = 25f + j * dc;

@@ -53,6 +53,7 @@
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem09.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem10.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../project-01/problem-05/src/Main05.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-05/src/Main05.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/problem-04/src/Main04.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-04/src/Main04.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +171,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/problem-04/src/Main04.java</url>
-          <line>54</line>
+          <line>61</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
