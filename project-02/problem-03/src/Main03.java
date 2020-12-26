@@ -21,14 +21,14 @@ public class Main03 extends PApplet {
 
         N = Integer.parseInt(JOptionPane.showInputDialog("N?").trim());
 
-//        if(N<10 || N>35) {
-//            JOptionPane.showMessageDialog(
-//                    null,
-//                    "Wrong size of balls!",
-//                    "Error",
-//                    JOptionPane.INFORMATION_MESSAGE);
-//            exit();
-//        }
+        if(N<2 || N>35) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Wrong size of balls!",
+                    "Error",
+                    JOptionPane.INFORMATION_MESSAGE);
+            exit();
+        }
 
         coordsX = new float[N];
         coordsY = new float[N];
@@ -44,18 +44,6 @@ public class Main03 extends PApplet {
 
             x += EXTEND;
             y += EXTEND;
-
-//            if(x>=width-EXTEND) {
-//                bounceXY[i][0] = true;
-//            } else {
-//                x += EXTEND;
-//            }
-//
-//            if(y>=height-EXTEND) {
-//                bounceXY[i][1] = true;
-//            } else {
-//                y += EXTEND;
-//            }
         }
     }
 
