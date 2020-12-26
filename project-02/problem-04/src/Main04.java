@@ -55,17 +55,11 @@ public class Main04 extends PApplet {
             for (int j = 0; j < length; j++)
             {
                 if(rand%2==0) {
-                    red[i][j] = 0f;
                     green[i][j] = 25f + j * dc;
-                    blue[i][j] = 0f;
                 }else if(rand%3==0) {
-                    red[i][j] = 0f;
                     blue[i][j] = 25f + j * dc;
-                    green[i][j] = 0f;
                 }else {
                     red[i][j] = 25f + j * dc;
-                    blue[i][j] = 0f;
-                    green[i][j] = 0f;
                 }
 
                 coordsX[i][j] = x;
