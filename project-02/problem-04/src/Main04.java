@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Main04 extends PApplet {
 
-    private int N;
+    private int N, length;
     private float[][] coordsX;
     private float[][] coordsY;
     private final float speed = 5f;
@@ -21,6 +21,7 @@ public class Main04 extends PApplet {
         frameRate(50f);
 
         N = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of sequences?").trim());
+        length = Integer.parseInt(JOptionPane.showInputDialog("Enter the length of sequences?").trim());
 
 //        if(N<2 || N>35) {
 //            JOptionPane.showMessageDialog(
@@ -31,17 +32,17 @@ public class Main04 extends PApplet {
 //            exit();
 //        }
 
-        coordsX = new float[N][N];
-        coordsY = new float[N][N];
-        bounceX = new boolean[N][N];
-        bounceY = new boolean[N][N];
+        coordsX = new float[N][length];
+        coordsY = new float[N][length];
+        bounceX = new boolean[N][length];
+        bounceY = new boolean[N][length];
 
         for(int i=0; i<N; i++) {
 
             float x = random(width);
             float y = random(height);
 
-            for (int j = 0; j < N; j++)
+            for (int j = 0; j < length; j++)
             {
                 coordsX[i][j] = x;
                 coordsY[i][j] = y;
@@ -59,7 +60,7 @@ public class Main04 extends PApplet {
 
         for(int i=0;i<N;i++)
         {
-            for (int j = 0; j < N; j++)
+            for (int j = 0; j < length; j++)
             {
                 fill(0f, 0f, 25f + j * dc);
                 ellipse(coordsX[i][j], coordsY[i][j], EXTEND + 13f, EXTEND + 13f);
@@ -73,7 +74,7 @@ public class Main04 extends PApplet {
     {
         for(int i=0; i<N; i++)
         {
-            for (int j = 0; j < N; j++)
+            for (int j = 0; j < length; j++)
             {
                 float x = coordsX[i][j];
                 float y = coordsY[i][j];
