@@ -22,20 +22,10 @@ public class Main04 extends PApplet {
 
     public void setup() {
         noStroke();
-
         frameRate(50f);
 
         N = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of sequences?").trim());
         length = Integer.parseInt(JOptionPane.showInputDialog("Enter the length of sequences?").trim());
-
-//        if(N<2 || N>35) {
-//            JOptionPane.showMessageDialog(
-//                    null,
-//                    "Wrong size of !",
-//                    "Error",
-//                    JOptionPane.INFORMATION_MESSAGE);
-//            exit();
-//        }
 
         red = new float[N][length];
         green = new float[N][length];
@@ -48,8 +38,8 @@ public class Main04 extends PApplet {
         for(int i=0; i<N; i++) {
 
             float dc = 230f/length;
-            float x = random(0, width);
-            float y = random(0, height);
+            float x = random(0, width*.5f);
+            float y = random(0, height*.5f);
             float angle = random(0,TWO_PI);
             int rand = (int)random(255);
 
@@ -83,7 +73,7 @@ public class Main04 extends PApplet {
 
         for(int i=0;i<N;i++)
         {
-            for (int j = 0; j < length; j++)
+            for (int j = 0, k=length-1; j < length; j++, k--)
             {
                 fill(red[i][j],green[i][j],blue[i][j]);
                 ellipse(coordsX[i][j], coordsY[i][j], EXTEND + 9f, EXTEND + 9f);
