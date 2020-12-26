@@ -8,9 +8,12 @@ public class Main04 extends PApplet {
     private float[][] coordsX;
     private float[][] coordsY;
     private final float speed = 5f;
-    private final float EXTEND = 30f;
+    private final float EXTEND = 20f;
     private boolean[][] bounceX;
     private boolean[][] bounceY;
+    private float[][] red;
+    private float[][] green;
+    private float[][] blue;
 
 
     public void settings() {
@@ -18,6 +21,8 @@ public class Main04 extends PApplet {
     }
 
     public void setup() {
+        noStroke();
+
         frameRate(50f);
 
         N = Integer.parseInt(JOptionPane.showInputDialog("Enter the number of sequences?").trim());
@@ -32,6 +37,9 @@ public class Main04 extends PApplet {
 //            exit();
 //        }
 
+        red = new float[N][length];
+        green = new float[N][length];
+        blue = new float[N][length];
         coordsX = new float[N][length];
         coordsY = new float[N][length];
         bounceX = new boolean[N][length];
@@ -39,11 +47,27 @@ public class Main04 extends PApplet {
 
         for(int i=0; i<N; i++) {
 
+            float dc = 230f/length;
             float x = random(width);
             float y = random(height);
+            int rand = (int)random(255);
 
             for (int j = 0; j < length; j++)
             {
+                if(rand%2==0) {
+                    red[i][j] = 0f;
+                    green[i][j] = 25f + j * dc;
+                    blue[i][j] = 0f;
+                }else if(rand%3==0) {
+                    red[i][j] = 0f;
+                    blue[i][j] = 25f + j * dc;
+                    green[i][j] = 0f;
+                }else {
+                    red[i][j] = 25f + j * dc;
+                    blue[i][j] = 0f;
+                    green[i][j] = 0f;
+                }
+
                 coordsX[i][j] = x;
                 coordsY[i][j] = y;
 
@@ -56,14 +80,12 @@ public class Main04 extends PApplet {
     public void draw() {
         background(0, 0, 0);
 
-        float dc = 230f/N;
-
         for(int i=0;i<N;i++)
         {
             for (int j = 0; j < length; j++)
             {
-                fill(0f, 0f, 25f + j * dc);
-                ellipse(coordsX[i][j], coordsY[i][j], EXTEND + 13f, EXTEND + 13f);
+                fill(red[i][j],green[i][j],blue[i][j]);
+                ellipse(coordsX[i][j], coordsY[i][j], EXTEND + 9f, EXTEND + 9f);
             }
         }
 

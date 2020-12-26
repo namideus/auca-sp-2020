@@ -19,7 +19,7 @@ public class Main03 extends PApplet {
     public void setup() {
         frameRate(50f);
 
-        N = Integer.parseInt(JOptionPane.showInputDialog("N?").trim());
+        N = Integer.parseInt(JOptionPane.sthowInputDialog("N?").trim());
 
         if(N<2 || N>35) {
             JOptionPane.showMessageDialog(
