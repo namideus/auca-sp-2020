@@ -54,7 +54,8 @@
       <change beforePath="$PROJECT_DIR$/../lab05/src/com/auca/Problem10.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../project-01/problem-05/src/Main05.java" beforeDir="false" afterPath="$PROJECT_DIR$/../project-01/problem-05/src/Main05.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem-03/src/Main03.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-03/src/Main03.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem-04/problem-04.iml" beforeDir="false" afterPath="$PROJECT_DIR$/problem-04/problem-04.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem-04/src/Main04.java" beforeDir="false" afterPath="$PROJECT_DIR$/problem-04/src/Main04.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +96,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
-  <component name="RunManager" selected="Application.Main03">
+  <component name="RunManager" selected="Application.Main04">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="project-02" />
@@ -127,11 +128,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main04" />
+      <module name="problem-04" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main04" />
+        <item itemvalue="Application.Main01" />
         <item itemvalue="Application.Main03" />
         <item itemvalue="Application.Main02" />
-        <item itemvalue="Application.Main01" />
       </list>
     </recent_temporary>
   </component>
@@ -157,21 +166,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/problem-03/src/Main03.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/problem-03/src/Main03.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
